@@ -8,7 +8,7 @@
 
 <meta name="description" content="Fast, pointwise graph curvature">
 
-<title>diffusion_curvature</title>
+<title>diffusion_curvature - Diffusion Curvature</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,12 +97,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="diffusion_curvature">
+<meta property="og:title" content="diffusion_curvature - Diffusion Curvature">
 <meta property="og:description" content="Fast, pointwise graph curvature">
+<meta property="og:image" content="https://professorwug.github.io/diffusion_curvature/index_files/figure-html/cell-6-output-1.png">
 <meta property="og:site-name" content="diffusion_curvature">
-<meta name="twitter:title" content="diffusion_curvature">
+<meta property="og:image:height" content="790">
+<meta property="og:image:width" content="760">
+<meta name="twitter:title" content="diffusion_curvature - Diffusion Curvature">
 <meta name="twitter:description" content="Fast, pointwise graph curvature">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://professorwug.github.io/diffusion_curvature/index_files/figure-html/cell-6-output-1.png">
+<meta name="twitter:image-height" content="790">
+<meta name="twitter:image-width" content="760">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -126,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">diffusion_curvature</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Diffusion Curvature</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -141,25 +147,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">diffusion_curvature</span></a>
+ <span class="menu-text">Diffusion Curvature</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./core (graphtools).html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffusion Curvature - Graphtools Implementation</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./core (pyg).html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffusion Curvature Core (Pyg)</span></a>
+ <span class="menu-text">Implementation (Graphtools)</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Torus</span></a>
+ <span class="menu-text">Datasets</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -185,7 +185,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#install" id="toc-install" class="nav-link active" data-scroll-target="#install">Install</a></li>
-  <li><a href="#how-to-use" id="toc-how-to-use" class="nav-link" data-scroll-target="#how-to-use">How to use</a></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a>
+  <ul class="collapse">
+  <li><a href="#diffusioncurvature" id="toc-diffusioncurvature" class="nav-link" data-scroll-target="#diffusioncurvature">DiffusionCurvature</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/professorwug/diffusion_curvature/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -194,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">diffusion_curvature</h1>
+<h1 class="title">Diffusion Curvature</h1>
 </div>
 
 <div>
@@ -215,22 +218,94 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
-<p>This file will become your README and also the index of your documentation.</p>
+<p>Diffusion curvature is a pointwise extension of Ollivier-Ricci curvature, designed specifically for the often messy world of pointcloud data. Its advantages include:</p>
+<ol type="1">
+<li>Unaffected by density fluctuations in data: it inherits the diffusion operator’s denoising properties.</li>
+<li>Fast, and scalable to millions of points: it depends only on matrix powering - no optimal transport required.</li>
+</ol>
 <section id="install" class="level2">
 <h2 class="anchored" data-anchor-id="install">Install</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install diffusion_curvature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It’s not yet available via PyPI. In the meantime, you can run:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install git+git://github.com/professorwug/diffusion_curvature@master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="how-to-use" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use">How to use</h2>
-<p>Fill me in please! Don’t forget code examples:</p>
+<section id="usage" class="level2">
+<h2 class="anchored" data-anchor-id="usage">Usage</h2>
+<p>To compute diffusion curvature, first create a <code>graphtools</code> graph with your data. Graphtools offers extensive support for different kernel types (if creating from a pointcloud), and can also work with graphs in the <code>PyGSP</code> format. We recommend using <code>anistropy=1</code>, and verifying that the supplied knn value encompasses a reasonable portion of the graph.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> diffusion_curvature.datasets <span class="im">import</span> torus</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> graphtools</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>X_torus, torus_gaussian_curvature <span class="op">=</span> torus(n<span class="op">=</span><span class="dv">5000</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>G_torus <span class="op">=</span> graphtools.Graph(X_torus, anisotropy<span class="op">=</span><span class="dv">1</span>, knn<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, instantiate a <a href="https://professorwug.github.io/diffusion_curvature/core%20(graphtools).html#diffusioncurvature"><code>DiffusionCurvature</code></a> operator.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> diffusion_curvature.graphtools <span class="im">import</span> DiffusionCurvature</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>DC <span class="op">=</span> DiffusionCurvature(t<span class="op">=</span><span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p><a href="https://github.com/professorwug/diffusion_curvature/blob/main/diffusion_curvature/graphtools.py#LNone" target="_blank" style="float:right; font-size:smaller">source</a></p>
+<section id="diffusioncurvature" class="level3">
+<h3 class="anchored" data-anchor-id="diffusioncurvature">DiffusionCurvature</h3>
+<blockquote class="blockquote">
+<pre><code> DiffusionCurvature (t:int, distance_type='PHATE', use_entropy:bool=False,
+                     **kwargs)</code></pre>
+</blockquote>
+<p>Initialize self. See help(type(self)) for accurate signature.</p>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 34%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Type</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>t</td>
+<td>int</td>
+<td></td>
+<td>Number of diffusion steps to use when measuring curvature. TODO: Heuristics</td>
+</tr>
+<tr class="even">
+<td>distance_type</td>
+<td>str</td>
+<td>PHATE</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>use_entropy</td>
+<td>bool</td>
+<td>False</td>
+<td>If true, uses KL Divergence instead of Wasserstein Distances. Faster, seems empirically as good, but less proven.</td>
+</tr>
+<tr class="even">
+<td>kwargs</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>And, finally, pass your graph through it. The <a href="https://professorwug.github.io/diffusion_curvature/core%20(graphtools).html#diffusioncurvature"><code>DiffusionCurvature</code></a> operator will store everything it computes – the powered diffusion matrix, the estimated manifold distances, and the curvatures – as attributes of your graph. To get the curvatures, you can run <code>G.ks</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>G_torus <span class="op">=</span> DC.curvature(G_torus, dimension<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plot_3d(X_torus, G_torus.ks, colorbar<span class="op">=</span><span class="va">True</span>, title<span class="op">=</span><span class="st">"Diffusion Curvature on the torus"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<pre><code>2</code></pre>
+<p><img src="index_files/figure-html/cell-6-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

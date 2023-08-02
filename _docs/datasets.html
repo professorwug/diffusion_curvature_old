@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Toy manifolds, their curvatures, and density-respecting samplings">
 
-<title>diffusion_curvature - Torus</title>
+<title>diffusion_curvature - Datasets</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,14 +99,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="diffusion_curvature - Torus">
-<meta property="og:description" content="">
+<meta property="og:title" content="diffusion_curvature - Datasets">
+<meta property="og:description" content="Toy manifolds, their curvatures, and density-respecting samplings">
 <meta property="og:image" content="https://professorwug.github.io/diffusion_curvature/Datasets_files/figure-html/cell-13-output-1.png">
 <meta property="og:site-name" content="diffusion_curvature">
 <meta property="og:image:height" content="810">
 <meta property="og:image:width" content="790">
-<meta name="twitter:title" content="diffusion_curvature - Torus">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="diffusion_curvature - Datasets">
+<meta name="twitter:description" content="Toy manifolds, their curvatures, and density-respecting samplings">
 <meta name="twitter:image" content="https://professorwug.github.io/diffusion_curvature/Datasets_files/figure-html/cell-13-output-1.png">
 <meta name="twitter:image-height" content="810">
 <meta name="twitter:image-width" content="790">
@@ -133,7 +134,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datasets.html">Torus</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datasets.html">Datasets</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -148,25 +149,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">diffusion_curvature</span></a>
+ <span class="menu-text">Diffusion Curvature</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./core (graphtools).html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffusion Curvature - Graphtools Implementation</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./core (pyg).html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffusion Curvature Core (Pyg)</span></a>
+ <span class="menu-text">Implementation (Graphtools)</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./datasets.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Torus</span></a>
+ <span class="menu-text">Datasets</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -191,8 +186,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#rejection_sample_for_torus" id="toc-rejection_sample_for_torus" class="nav-link active" data-scroll-target="#rejection_sample_for_torus">rejection_sample_for_torus</a></li>
-  <li><a href="#torus" id="toc-torus" class="nav-link" data-scroll-target="#torus">torus</a></li>
+  <li><a href="#torus" id="toc-torus" class="nav-link active" data-scroll-target="#torus">Torus</a>
+  <ul class="collapse">
+  <li><a href="#rejection_sample_for_torus" id="toc-rejection_sample_for_torus" class="nav-link" data-scroll-target="#rejection_sample_for_torus">rejection_sample_for_torus</a></li>
+  <li><a href="#torus-1" id="toc-torus-1" class="nav-link" data-scroll-target="#torus-1">torus</a></li>
+  </ul></li>
   <li><a href="#one-sheet-hyperboloid" id="toc-one-sheet-hyperboloid" class="nav-link" data-scroll-target="#one-sheet-hyperboloid">One-Sheet Hyperboloid</a>
   <ul class="collapse">
   <li><a href="#hyperboloid" id="toc-hyperboloid" class="nav-link" data-scroll-target="#hyperboloid">hyperboloid</a></li>
@@ -225,9 +223,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Torus</h1>
+<h1 class="title">Datasets</h1>
 </div>
 
+<div>
+  <div class="description">
+    Toy manifolds, their curvatures, and density-respecting samplings
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -243,40 +246,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
 <p>In this notebook, we’ll build various toy datasets and calculate their sectional curvatures.</p>
 <p>This will use the Python symbolic computation library, sympy. Note: this library is not required to use the <code>diffusion_curvature</code> package. We merely employ it to calculate the curvature and appropriate expressions for rejection sampling.</p>
-<div class="cell" data-execution_count="4">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sym</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="5">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> sym.Symbol(<span class="st">'theta'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>phi <span class="op">=</span> sym.Symbol(<span class="st">'phi'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> sym.Symbol(<span class="st">"R"</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> sym.Symbol(<span class="st">"r"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="6">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> (R <span class="op">+</span> r<span class="op">*</span>sym.cos(theta))<span class="op">*</span>sym.cos(phi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="7">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sym.diff(f1,theta)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display">
 <p><span class="math inline">\(\displaystyle - r \sin{\left(\theta \right)} \cos{\left(\phi \right)}\)</span></p>
 </div>
 </div>
-<div class="cell" data-execution_count="8">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> sym.Matrix([(R <span class="op">+</span> r<span class="op">*</span>sym.cos(theta))<span class="op">*</span>sym.cos(phi), (R <span class="op">+</span> r<span class="op">*</span>sym.cos(theta))<span class="op">*</span>sym.sin(phi), r<span class="op">*</span>sym.sin(theta)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="9">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sym.diff(f, theta)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}- r \sin{\left(\theta \right)} \cos{\left(\phi \right)}\\- r \sin{\left(\phi \right)} \sin{\left(\theta \right)}\\r \cos{\left(\theta \right)}\end{matrix}\right]\)</span></p>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(sym.diff(f, theta).T  <span class="op">*</span> sym.diff(f, theta))[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display">
 <p><span class="math inline">\(\displaystyle r^{2} \sin^{2}{\left(\phi \right)} \sin^{2}{\left(\theta \right)} + r^{2} \sin^{2}{\left(\theta \right)} \cos^{2}{\left(\phi \right)} + r^{2} \cos^{2}{\left(\theta \right)}\)</span></p>
 </div>
 </div>
-<div class="cell" data-execution_count="11">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rejection_sample_formula(f, variables):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    G <span class="op">=</span> sym.Matrix.zeros(<span class="dv">2</span>,<span class="dv">2</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, x1 <span class="kw">in</span> <span class="bu">enumerate</span>(variables):</span>
@@ -284,13 +287,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            G[i,j] <span class="op">=</span> (sym.diff(f, x1).T  <span class="op">*</span> sym.diff(f, x2))[<span class="dv">0</span>]</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sym.sqrt(G.det().simplify()).simplify()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="12">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> rejection_sample_formula(f,[theta, phi])</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display">
 <p><span class="math inline">\(\displaystyle \sqrt{r^{2} \left(R + r \cos{\left(\theta \right)}\right)^{2}}\)</span></p>
 </div>
 </div>
+<section id="torus" class="level1">
+<h1>Torus</h1>
 <p>The curvature of the torus is given by <span class="math display">\[ S(\theta) = \frac{8 \cos{\theta}}{5 + \cos{\theta}} \]</span></p>
 <hr>
 <p><a href="https://github.com/professorwug/diffusion_curvature/blob/main/diffusion_curvature/datasets.py#L15" target="_blank" style="float:right; font-size:smaller">source</a></p>
@@ -308,8 +313,8 @@ Uses rejection sampling....
 <hr>
 <p><a href="https://github.com/professorwug/diffusion_curvature/blob/main/diffusion_curvature/datasets.py#L22" target="_blank" style="float:right; font-size:smaller">source</a></p>
 </section>
-<section id="torus" class="level3">
-<h3 class="anchored" data-anchor-id="torus">torus</h3>
+<section id="torus-1" class="level3">
+<h3 class="anchored" data-anchor-id="torus-1">torus</h3>
 <blockquote class="blockquote">
 <pre><code> torus (n=2000, c=2, a=1, noise=None, seed=None, use_guide_points=False)</code></pre>
 </blockquote>
@@ -364,7 +369,7 @@ Uses rejection sampling....
 </tbody>
 </table>
 <p>Visualize with the curvature</p>
-<div class="cell" data-execution_count="15">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>X,ks <span class="op">=</span> torus(n<span class="op">=</span><span class="dv">5000</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plot_3d(X, ks, title<span class="op">=</span><span class="st">"Torus with scalar curvature"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -372,10 +377,11 @@ Uses rejection sampling....
 </div>
 </div>
 </section>
+</section>
 <section id="one-sheet-hyperboloid" class="level1">
 <h1>One-Sheet Hyperboloid</h1>
 <p>First, let’s determine the rejection sampling formula</p>
-<div class="cell" data-execution_count="16">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> sym.Symbol(<span class="st">'a'</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> sym.Symbol(<span class="st">'b'</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> sym.Symbol(<span class="st">"theta"</span>)</span>
@@ -384,11 +390,11 @@ Uses rejection sampling....
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    [a<span class="op">*</span>sym.cos(theta)<span class="op">*</span>sym.sqrt(u<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="dv">1</span>),b<span class="op">*</span>sym.sin(theta)<span class="op">*</span>sym.sqrt(u<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="dv">1</span>),u]</span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="17">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>variables <span class="op">=</span> [theta, u]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>rej <span class="op">=</span> rejection_sample_formula(f, variables)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>rej</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display">
 <p><span class="math inline">\(\displaystyle \sqrt{a^{2} b^{2} u^{2} + a^{2} u^{2} \sin^{2}{\left(\theta \right)} + a^{2} \sin^{2}{\left(\theta \right)} - b^{2} u^{2} \sin^{2}{\left(\theta \right)} + b^{2} u^{2} - b^{2} \sin^{2}{\left(\theta \right)} + b^{2}}\)</span></p>
 </div>
 </div>
@@ -469,7 +475,7 @@ Uses rejection sampling....
 <pre><code> rejection_sample_for_hyperboloid (n, a, b, c, u_limit)</code></pre>
 </blockquote>
 <pre><code>&lt;function nbdev.showdoc.show_doc(sym, renderer=None, name: 'str | None' = None, title_level: 'int' = 3)&gt;</code></pre>
-<div class="cell" data-execution_count="20">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>X, ks <span class="op">=</span> hyperboloid(<span class="dv">2000</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plot_3d(X,ks,colorbar<span class="op">=</span><span class="va">True</span>,use_plotly<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -480,7 +486,7 @@ Uses rejection sampling....
 </section>
 <section id="ellipsoid" class="level1">
 <h1>Ellipsoid</h1>
-<div class="cell" data-execution_count="21">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> sym.Symbol(<span class="st">'a'</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> sym.Symbol(<span class="st">'b'</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> sym.Symbol(<span class="st">'c'</span>)</span>
@@ -491,11 +497,11 @@ Uses rejection sampling....
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    [a<span class="op">*</span>sym.cos(theta)<span class="op">*</span>sym.sin(phi),b<span class="op">*</span>sym.sin(theta)<span class="op">*</span>sym.sin(phi),c<span class="op">*</span>sym.cos(phi)]</span>
 <span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="22">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>variables <span class="op">=</span> [theta, phi]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>rej <span class="op">=</span> rejection_sample_formula(f, variables)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>rej</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell-output cell-output-display">
 <p><span class="math inline">\(\displaystyle \sqrt{- a^{2} b^{2} \sin^{4}{\left(\phi \right)} + a^{2} b^{2} \sin^{2}{\left(\phi \right)} + a^{2} c^{2} \sin^{4}{\left(\phi \right)} \sin^{2}{\left(\theta \right)} - b^{2} c^{2} \sin^{4}{\left(\phi \right)} \sin^{2}{\left(\theta \right)} + b^{2} c^{2} \sin^{4}{\left(\phi \right)}}\)</span></p>
 </div>
 </div>
@@ -575,7 +581,7 @@ Uses rejection sampling....
 <blockquote class="blockquote">
 <pre><code> rejection_sample_for_ellipsoid (n, a, b, c)</code></pre>
 </blockquote>
-<div class="cell" data-execution_count="24">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>X, ks <span class="op">=</span> ellipsoid(n<span class="op">=</span><span class="dv">5000</span>, noise <span class="op">=</span> <span class="fl">0.1</span>)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>plot_3d(X,ks,colorbar<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -593,7 +599,7 @@ Uses rejection sampling....
 <blockquote class="blockquote">
 <pre><code> sphere (n, radius=1, noise=0, use_guide_points=False)</code></pre>
 </blockquote>
-<div class="cell" data-execution_count="45">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>X, ks <span class="op">=</span> sphere(n<span class="op">=</span><span class="dv">1000</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>plot_3d(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -604,7 +610,7 @@ Uses rejection sampling....
 </section>
 <section id="random-cube" class="level1">
 <h1>Random Cube</h1>
-<div class="cell" data-execution_count="27">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> random_cube(n):</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return a random cube</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -625,7 +631,7 @@ Uses rejection sampling....
 <section id="saddle-regions" class="level1">
 <h1>Saddle Regions</h1>
 <p>Generate hyperbolic regions as test cases of Laziness curvature.</p>
-<div class="cell" data-execution_count="28">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> sym.Symbol(<span class="st">'a'</span>)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> sym.Symbol(<span class="st">'b'</span>)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sym.Symbol(<span class="st">"x"</span>)</span>
@@ -634,11 +640,11 @@ Uses rejection sampling....
 <span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    [x,y,a<span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">*</span>y<span class="op">**</span><span class="dv">2</span>]</span>
 <span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="29">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>variables <span class="op">=</span> [x, y]</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>rej <span class="op">=</span> rejection_sample_formula(f, variables)</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>rej</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
+<div class="cell-output cell-output-display">
 <p><span class="math inline">\(\displaystyle \sqrt{4 a^{2} x^{2} + 4 b^{2} y^{2} + 1}\)</span></p>
 </div>
 </div>
@@ -712,40 +718,22 @@ Uses rejection sampling....
 <blockquote class="blockquote">
 <pre><code> rejection_sample_for_saddle (n, a, b)</code></pre>
 </blockquote>
-<div class="cell" data-execution_count="31">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>X, ks <span class="op">=</span> paraboloid(n<span class="op">=</span><span class="dv">10000</span>, a <span class="op">=</span> <span class="dv">1</span>, b <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>,use_guide_points<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="32">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>plot_3d(X,ks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="Datasets_files/figure-html/cell-34-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="33">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.zeros(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="34">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>np.concatenate([[<span class="dv">0</span>],x])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="34">
+<div class="cell-output cell-output-display">
 <pre><code>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>np.savetxt(<span class="st">"datasets/hyperboloid.txt"</span>,X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.loadtxt(<span class="st">"datasets/hyperboloid.txt"</span>,dtype<span class="op">=</span><span class="bu">float</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>Y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="37">
-<pre><code>array([[ 0.        ,  0.        ,  0.        ],
-       [-0.9521675 ,  0.29979808,  0.81674406],
-       [-0.77266581, -0.28437732,  0.51614199],
-       ...,
-       [ 0.00402681,  0.94392053, -0.89096976],
-       [-0.42648474, -0.18276849,  0.14848491],
-       [-0.64865911,  0.02571754,  0.42009725]])</code></pre>
 </div>
 </div>
 </section>
@@ -759,8 +747,8 @@ Uses rejection sampling....
 <blockquote class="blockquote">
 <pre><code> plane (n)</code></pre>
 </blockquote>
-<div class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>nbdev_export</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>nbdev_export</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

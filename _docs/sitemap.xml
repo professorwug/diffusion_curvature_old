@@ -2,30 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://professorwug.github.io/diffusion_curvature/manifold distances.html</loc>
-    <lastmod>2023-08-02T21:08:20.741Z</lastmod>
-  </url>
-  <url>
-    <loc>https://professorwug.github.io/diffusion_curvature/core (pyg).html</loc>
-    <lastmod>2023-08-02T21:08:20.221Z</lastmod>
-  </url>
-  <url>
-    <loc>https://professorwug.github.io/diffusion_curvature/core.html</loc>
-    <lastmod>2023-08-02T21:08:19.593Z</lastmod>
-  </url>
-  <url>
-    <loc>https://professorwug.github.io/diffusion_curvature/core (graphtools).html</loc>
-    <lastmod>2023-08-02T21:08:18.841Z</lastmod>
-  </url>
-  <url>
-    <loc>https://professorwug.github.io/diffusion_curvature/datasets.html</loc>
-    <lastmod>2023-08-02T21:08:19.413Z</lastmod>
+    <lastmod>2023-08-02T21:43:56.403Z</lastmod>
   </url>
   <url>
     <loc>https://professorwug.github.io/diffusion_curvature/kernels.html</loc>
-    <lastmod>2023-08-02T21:08:19.925Z</lastmod>
+    <lastmod>2023-08-02T21:43:55.807Z</lastmod>
+  </url>
+  <url>
+    <loc>https://professorwug.github.io/diffusion_curvature/core (graphtools).html</loc>
+    <lastmod>2023-08-02T21:43:55.043Z</lastmod>
+  </url>
+  <url>
+    <loc>https://professorwug.github.io/diffusion_curvature/datasets.html</loc>
+    <lastmod>2023-08-02T21:43:55.431Z</lastmod>
   </url>
   <url>
     <loc>https://professorwug.github.io/diffusion_curvature/index.html</loc>
-    <lastmod>2023-08-02T21:08:20.553Z</lastmod>
+    <lastmod>2023-08-02T21:43:56.183Z</lastmod>
   </url>
 </urlset>
