@@ -47,11 +47,10 @@ def power_diffusion_matrix(self:DiffusionCurvature, G:graphtools.api.Graph, t=No
 # %% ../nbs/Core (graphtools).ipynb 16
 @patch
 def distances(self:DiffusionCurvature, G):
-        match self.distance_type:
-            case "PHATE":
-                G = phate_distances(G)
-            case _:
-                raise NotImplementedError(f"No distance with name {self.distance_type}")
+        if self.distance_type == "PHATE":
+            G = phate_distances(G)
+        else:
+           raise NotImplementedError(f"No distance with name {self.distance_type}")
         return G
 
 # %% ../nbs/Core (graphtools).ipynb 21
