@@ -1,0 +1,9 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - Core (graphtools).ipynb
+      - Core (pyg).ipynb
+      - Datasets.ipynb
+      - Kernels.ipynb
+      - Manifold Distances.ipynb
