@@ -32,13 +32,12 @@ def gaussian_kernel(
     supported_kernel_types = {'fixed', 'adaptive'}
     assert kernel_type in supported_kernel_types
     D = pairwise_distances(X)
-    match kernel_type:
-        case "fixed":
+    if kernel_type == "fixed":
             if not sigma:
                 # estimate sigma using a heuristic
                 sigma = median_heuristic(D)
             W = (1/(sigma*np.sqrt(2*np.pi)))*np.exp((-D**2)/(2*sigma**2))
-        case "adaptive":
+    elif kernel_type == "adaptive":
             distance_to_k_neighbor = np.partition(D,k)[:,k]
             # Populate matrices with this distance for easy division.
             div1 = np.ones(len(D))[:,None] @ distance_to_k_neighbor[None,:]
