@@ -34,7 +34,7 @@ def power_diffusion_matrix(self:DiffusionCurvature, G:graphtools.api.Graph, t=No
             G.Pt = np.linalg.matrix_power(G.P, t)
         elif type(G.P) == scipy.sparse.csr_matrix:
             if 'n_landmark' in G.get_params().keys():
-                # the graph was built with landmarking. We'll power the diffusion matrix that way
+                # the graph was built with landmarking we'll power the diffusion matrix that way
                 G.Pt = scipy.sparse.csr_matrix(
                     G.transitions @ np.linalg.matrix_power(G.landmark_op,t) @ G.transitions.T
                 )
@@ -44,7 +44,7 @@ def power_diffusion_matrix(self:DiffusionCurvature, G:graphtools.api.Graph, t=No
             raise NotImplementedError("Unknown Matrix Type")
         return G
 
-# %% ../nbs/Core (graphtools).ipynb 17
+# %% ../nbs/Core (graphtools).ipynb 18
 @patch
 def distances(self:DiffusionCurvature, G):
         if self.distance_type == "PHATE":
@@ -53,7 +53,7 @@ def distances(self:DiffusionCurvature, G):
            raise NotImplementedError(f"No distance with name {self.distance_type}")
         return G
 
-# %% ../nbs/Core (graphtools).ipynb 22
+# %% ../nbs/Core (graphtools).ipynb 23
 @patch
 def wasserstein_spread_of_diffusion(self:DiffusionCurvature, G:graphtools.graphs.DataGraph, idx = None):
         """
@@ -75,7 +75,7 @@ def wasserstein_spread_of_diffusion(self:DiffusionCurvature, G:graphtools.graphs
         else:
             return np.sum(G.D[idx]* Pt[idx])
 
-# %% ../nbs/Core (graphtools).ipynb 26
+# %% ../nbs/Core (graphtools).ipynb 27
 def get_graph_type(G):
     tt = str(type(G)).split('.')[-1][:3].lower()
     # TODO: Support for MNN graphs
@@ -83,7 +83,7 @@ def get_graph_type(G):
     if tt in ['knn']: return tt
     else: return 'exact'
 
-# %% ../nbs/Core (graphtools).ipynb 31
+# %% ../nbs/Core (graphtools).ipynb 32
 @patch
 def flattened_facsimile_of_graph(self:DiffusionCurvature, G:graphtools.graphs.DataGraph, dimension):
         """
@@ -124,7 +124,7 @@ def flattened_facsimile_of_graph(self:DiffusionCurvature, G:graphtools.graphs.Da
         # TODO: This is a tad wasteful. We only need the center diffusion powered.
         return G_flat
 
-# %% ../nbs/Core (graphtools).ipynb 34
+# %% ../nbs/Core (graphtools).ipynb 35
 @patch
 def entropy_of_diffusion(self:DiffusionCurvature, G:graphtools.graphs.DataGraph, idx=None):
         """
@@ -141,7 +141,7 @@ def entropy_of_diffusion(self:DiffusionCurvature, G:graphtools.graphs.DataGraph,
         else:
             return entropy(Pt[idx])
 
-# %% ../nbs/Core (graphtools).ipynb 36
+# %% ../nbs/Core (graphtools).ipynb 37
 @patch
 def curvature(self:DiffusionCurvature, 
     G:graphtools.graphs.DataGraph, # A graphtools graph to compute the curvature of
@@ -183,7 +183,7 @@ def curvature(self:DiffusionCurvature,
         G.ks = 1 - divided_pts
     return G
 
-# %% ../nbs/Core (graphtools).ipynb 39
+# %% ../nbs/Core (graphtools).ipynb 40
 from .kernels import plot_3d
 def plot_manifold_curvature(G, title = None):
     X = G.data

@@ -13,11 +13,24 @@ data. Its advantages include:
 
 ## Install
 
-It’s not yet available via PyPI. In the meantime, you can run:
+<!-- To install with conda (or better yet, mamba),
+```sh
+conda install diffusion-curvature -c riddlelabs
+``` -->
+
+To install with pip (or better yet, poetry),
 
 ``` sh
-pip install git+git://github.com/professorwug/diffusion_curvature@master
+pip install diffusion-curvature
 ```
+
+or
+
+``` sh
+poetry add diffusion-curvature
+```
+
+Conda releases are pending.
 
 ## Usage
 
@@ -33,6 +46,11 @@ import graphtools
 X_torus, torus_gaussian_curvature = torus(n=5000)
 G_torus = graphtools.Graph(X_torus, anisotropy=1, knn=30)
 ```
+
+Graphtools offers many additional options. For large graphs, you can
+speed up the powering of the diffusion matrix with landmarking: simply
+pass `n_landmarks=1000` (e.g) when creating the graphtools graph. If you
+enable landmarking, `diffusion-curvature` will automatically use it.
 
 Next, instantiate a
 [`DiffusionCurvature`](https://professorwug.github.io/diffusion_curvature/core%20(graphtools).html#diffusioncurvature)
