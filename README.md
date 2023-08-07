@@ -120,19 +120,22 @@ For predefined graphs, we use our own
 class. You can create one straight from an adjacency matrix:
 
 ``` python
-from diffusion_curvature.manifold_graph import ManifoldGraph, diffusion_curvature, diffusion_entropy_curvature, entropy_of_diffusion, wasserstein_spread_of_diffusion, power_diffusion_matrix, phate_distances, flattened_facsimile_of_graph
+from diffusion_curvature.manifold_graph import ManifoldGraph, diffusion_curvature, diffusion_entropy_curvature, entropy_of_diffusion, wasserstein_spread_of_diffusion, power_diffusion_matrix, phate_distances
+from diffusion_curvature.kernels import gaussian_kernel
+import numpy as np
 ```
 
 ``` python
-# pretend we've computed the adjacency matrix elsewhere in the code
-A = G_torus.K.toarray()
+# if you want (or have) to compute your own A
+A = gaussian_kernel(X_torus, kernel_type="adaptive", k = 20, anisotropic_density_normalization=1)
+np.fill_diagonal(A,0)
 # initialize the manifold graph; input your computed dimension along with the adjacency matrix
-G_pure = ManifoldGraph(A, dimension=2)
+G_pure = ManifoldGraph(A = A, dimension=2, anisotropic_density_normalization=1)
 ```
 
 ``` python
-G_pure = diffusion_curvature(G_pure, t=12)
-plot_3d(X_torus, G_pure.ks, title = "Diffusion Curvature on Graph")
+G_pure = diffusion_curvature(G_pure, t=8)
+plot_3d(X_torus, G_pure.ks, title = "Diffusion Curvature on Graph - without pointcloud")
 ```
 
 ![](index_files/figure-commonmark/cell-9-output-1.png)
@@ -148,15 +151,26 @@ latter is nice when the manifold’s geodesic distances are hard to
 estimate – it corresponds to replacing the wasserstein distance with the
 KL divergence.
 
+Both of these estimate an “inverse laziness” value that is inversely
+proportional to curvature. To use magnitude estimations in which the
+higher the curvature, the higher the value, we can simply take the
+reciprocal of the output.
+
 ``` python
 # for the wasserstein version, we need manifold distances
-G_pure = power_diffusion_matrix(G_pure)
+G_pure = power_diffusion_matrix(G_pure,t=8)
 G_pure = phate_distances(G_pure)
 ks_wasserstein = wasserstein_spread_of_diffusion(G_pure)
 ```
 
 ``` python
 # for the entropic version, we need only power the diffusion operator
-G_pure = power_diffusion_matrix(G_pure, t=12)
+G_pure = power_diffusion_matrix(G_pure, t=8)
 ks_entropy = entropy_of_diffusion(G_pure)
 ```
+
+``` python
+plot_3d(X_torus, 1/ks_entropy, title="Diffusion Entropy on Torus")
+```
+
+![](index_files/figure-commonmark/cell-12-output-1.png)
