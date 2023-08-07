@@ -119,6 +119,6 @@ def compute_anisotropic_diffusion_matrix_from_graph(
     ) -> np.ndarray:
     A_anis = compute_anisotropic_affinities_from_graph(A,alpha)
     # row normalize to create diffusion matrix
-    D = np.diag(1/np.sum(A_anis,axis=1))
+    D = np.diag(1/(np.sum(A_anis,axis=1)+1e-8))
     P = D @ A_anis
     return P

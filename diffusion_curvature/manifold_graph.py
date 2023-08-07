@@ -19,7 +19,7 @@ class ManifoldGraph():
     X=None, # raw points
     dimension=None, # dimension of manifold. 
     kernel_type:str = "adaptive", # "fixed" or "adaptive"
-    anisotropic_density_normalization:float=0.5,  # normalize out this amount of the density. 0 is none. 1 is all.
+    anisotropic_density_normalization:float=1,  # normalize out this amount of the density. 0 is none. 1 is all.
     num_neighbors = 10, # for adaptive kernel, constructs graph to connect this number of neighbors
     t = 10, # steps of diffusion
     A = None, 
@@ -33,10 +33,10 @@ class ManifoldGraph():
         """
         self.node_attributes = {}
         store_attr()
-        if not self.A:
+        if self.A is None:
             self.A = gaussian_kernel(self.X, kernel_type=self.kernel_type, k = self.num_neighbors, anisotropic_density_normalization=self.anisotropic_density_normalization)
             np.fill_diagonal(self.A,0)
-        if not self.P:
+        if self.P is None:
             self.P = compute_anisotropic_diffusion_matrix_from_graph(self.A, self.anisotropic_density_normalization)        
     def num_nodes(self):
         return len(self.A)
@@ -103,7 +103,7 @@ def flattened_facsimile_of_graph(G:ManifoldGraph, dimension=None):
 def diffusion_curvature(G:ManifoldGraph, t=None,):
     if t is None:
         t = G.t
-    if G.Pt is None:
+    if G.Pt is None or t != G.t:
         G = power_diffusion_matrix(G,t)
     if G.D is None:
         G = phate_distances(G)
