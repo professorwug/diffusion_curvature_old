@@ -19,10 +19,13 @@ class DiffusionCurvature():
     self,
     t:int, # Number of diffusion steps to use when measuring curvature. TODO: Heuristics
     distance_type = "PHATE",
+    dimest = None, # Dimensionality estimator to use. If None, defaults to KNN with default params
     use_entropy:bool = False, # If true, uses KL Divergence instead of Wasserstein Distances. Faster, seems empirically as good, but less proven.
     **kwargs
     ):
         store_attr()
+        if self.dimest is None:
+            self.dimest = skdim.id.KNN()
 
 # %% ../nbs/Core (graphtools).ipynb 12
 @patch
@@ -141,12 +144,12 @@ def entropy_of_diffusion(self:DiffusionCurvature, G:graphtools.graphs.DataGraph,
         else:
             return entropy(Pt[idx])
 
-# %% ../nbs/Core (graphtools).ipynb 37
+# %% ../nbs/Core (graphtools).ipynb 38
 @patch
 def curvature(self:DiffusionCurvature, 
     G:graphtools.graphs.DataGraph, # A graphtools graph to compute the curvature of
     t=None,  # The number of steps within the random walks. Corresponds to how local/global the curvature estimate is.
-    dimension:int = None,  # If supplied, the global manifold dimension. If not supplied, estimates the local dimension of each point.
+    dimension = None,  # If supplied, the intrinsic dimension of the manifold, either a list of the intrinsic dimension per point or an int of the global intrinsic dimension. If not supplied, estimates the local dimension of each point on the manifold using the estimator passed to DiffusionCurvature.
     ):
     """
     Computes diffusion curvature of input graph. Stores it in G.ks
@@ -157,33 +160,30 @@ def curvature(self:DiffusionCurvature,
     G = self.distances(G)
     spreads_on_manifold = self.wasserstein_spread_of_diffusion(G) if not self.use_entropy else self.entropy_of_diffusion(G)
     # Create flattened version of manifold and compute stuff
-    if dimension is not None:
-        # dimension was supplied as an int. There's a single global dimension. Our life is easy.
-        G_flat = self.flattened_facsimile_of_graph(G, dimension=dimension)
-        G_flat = self.power_diffusion_matrix(G_flat,t)
-        G_flat = self.distances(G_flat)
-        spreads_on_flat = self.wasserstein_spread_of_diffusion(G_flat, idx=0) if not self.use_entropy else self.entropy_of_diffusion(G, idx=0)
-        G.ks = 1 - (spreads_on_manifold/spreads_on_flat)
-    else:
-        # compute local dimension of each point, 
-        # TODO: Currently this requires underlying points.
+    if dimension is None: # The dimension wasn't supplied; we'll estimate it pointwise
         print("estimating local dimension of each point... may take a while")
-        ldims = skdim.id.DANCo().fit_pw(G.data,
+        ldims = self.dimest.fit_pw(G.data,
                             n_neighbors = 100,
                             n_jobs = 1)
-        dims_per_point = np.round(ldims.dimension_pw_)
-        unique_dims = set(dims_per_point)
-        unique_flats = {}
-        for d in unique_dims:
-            G_flat = self.flattened_facsimile_of_graph(G, dimension=d)
-            G_flat = self.power_diffusion_matrix(G_flat,t)
-            G_flat = self.distances(G_flat)
-            unique_flats[d] = self.wasserstein_spread_of_diffusion(G_flat, idx=0) if not self.use_entropy else self.entropy_of_diffusion(G, idx=0)
-        divided_pts = np.array([spreads_on_manifold/unique_flats[localdim] for localdim in dims_per_point])
-        G.ks = 1 - divided_pts
+        dims_per_point = np.round(ldims.dimension_pw_).astype(int)
+    else: # the dimension *was* supplied, but it may be either a single global dimension or a local dimension for each point
+        if isinstance(dimension, int):
+            dims_per_point = np.ones(G.P.shape[0], dtype=int)*dimension
+        else:
+            dims_per_point = dimension
+    # TODO: Currently this requires underlying points.
+    unique_dims = set(dims_per_point)
+    unique_flats = {}
+    for d in unique_dims:
+        G_flat = self.flattened_facsimile_of_graph(G, dimension=d)
+        G_flat = self.power_diffusion_matrix(G_flat,t)
+        G_flat = self.distances(G_flat)
+        unique_flats[d] = self.wasserstein_spread_of_diffusion(G_flat, idx=0) if not self.use_entropy else self.entropy_of_diffusion(G, idx=0)
+    divided_pts = np.array([spreads_on_manifold[idx]/unique_flats[localdim] for idx, localdim in enumerate(dims_per_point)])
+    G.ks = 1 - divided_pts
     return G
 
-# %% ../nbs/Core (graphtools).ipynb 40
+# %% ../nbs/Core (graphtools).ipynb 45
 from .kernels import plot_3d
 def plot_manifold_curvature(G, title = None):
     X = G.data

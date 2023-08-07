@@ -68,4 +68,37 @@ d = { 'settings': { 'branch': 'main',
                                              'diffusion_curvature.kernels.median_heuristic': ( 'kernels.html#median_heuristic',
                                                                                                'diffusion_curvature/kernels.py'),
                                              'diffusion_curvature.kernels.plot_3d': ( 'kernels.html#plot_3d',
-                                                                                      'diffusion_curvature/kernels.py')}}}
+                                                                                      'diffusion_curvature/kernels.py')},
+            'diffusion_curvature.manifold_graph': { 'diffusion_curvature.manifold_graph.ManifoldGraph': ( 'core '
+                                                                                                          '(manifoldgraph).html#manifoldgraph',
+                                                                                                          'diffusion_curvature/manifold_graph.py'),
+                                                    'diffusion_curvature.manifold_graph.ManifoldGraph.__init__': ( 'core '
+                                                                                                                   '(manifoldgraph).html#manifoldgraph.__init__',
+                                                                                                                   'diffusion_curvature/manifold_graph.py'),
+                                                    'diffusion_curvature.manifold_graph.ManifoldGraph.num_nodes': ( 'core '
+                                                                                                                    '(manifoldgraph).html#manifoldgraph.num_nodes',
+                                                                                                                    'diffusion_curvature/manifold_graph.py'),
+                                                    'diffusion_curvature.manifold_graph.diffusion_curvature': ( 'core '
+                                                                                                                '(manifoldgraph).html#diffusion_curvature',
+                                                                                                                'diffusion_curvature/manifold_graph.py'),
+                                                    'diffusion_curvature.manifold_graph.diffusion_entropy_curvature': ( 'core '
+                                                                                                                        '(manifoldgraph).html#diffusion_entropy_curvature',
+                                                                                                                        'diffusion_curvature/manifold_graph.py'),
+                                                    'diffusion_curvature.manifold_graph.entropy_of_diffusion': ( 'core '
+                                                                                                                 '(manifoldgraph).html#entropy_of_diffusion',
+                                                                                                                 'diffusion_curvature/manifold_graph.py'),
+                                                    'diffusion_curvature.manifold_graph.flattened_facsimile_of_graph': ( 'core '
+                                                                                                                         '(manifoldgraph).html#flattened_facsimile_of_graph',
+                                                                                                                         'diffusion_curvature/manifold_graph.py'),
+                                                    'diffusion_curvature.manifold_graph.phate_distances': ( 'core '
+                                                                                                            '(manifoldgraph).html#phate_distances',
+                                                                                                            'diffusion_curvature/manifold_graph.py'),
+                                                    'diffusion_curvature.manifold_graph.plot_manifold_curvature': ( 'core '
+                                                                                                                    '(manifoldgraph).html#plot_manifold_curvature',
+                                                                                                                    'diffusion_curvature/manifold_graph.py'),
+                                                    'diffusion_curvature.manifold_graph.power_diffusion_matrix': ( 'core '
+                                                                                                                   '(manifoldgraph).html#power_diffusion_matrix',
+                                                                                                                   'diffusion_curvature/manifold_graph.py'),
+                                                    'diffusion_curvature.manifold_graph.wasserstein_spread_of_diffusion': ( 'core '
+                                                                                                                            '(manifoldgraph).html#wasserstein_spread_of_diffusion',
+                                                                                                                            'diffusion_curvature/manifold_graph.py')}}}
