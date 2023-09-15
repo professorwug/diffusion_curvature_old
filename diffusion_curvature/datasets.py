@@ -215,7 +215,7 @@ def paraboloid(n=2000,a=1,b=-1, seed=None, use_guide_points = False):
     return data, ks
 
 # %% ../nbs/Datasets.ipynb 48
-def plane(n):
-    coords_2d = np.random.rand(n,2)*2-1
-    coords_2d = np.vstack([np.zeros(2),np.array([0,0.2]),np.array([0,-0.2]),np.zeros(2),coords_2d])
+def plane(n, dim=2):
+    coords_2d = np.random.rand(n,dim)*2-1
+    coords_2d = np.vstack([np.zeros(dim),coords_2d])
     return coords_2d
