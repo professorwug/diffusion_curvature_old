@@ -43,6 +43,7 @@ from .graphs import diff_aff, diff_op
 from .heat_diffusion import heat_diffusion_on_signal, kronecker_delta, jax_power_matrix
 from .diffusion_laziness import wasserstein_spread_of_diffusion, entropy_of_diffusion
 from .distances import phate_distances
+from .comparison_space import EuclideanComparison
 import diffusion_curvature
 
 _DIFFUSION_TYPES = Literal['diffusion matrix','heat kernel']
@@ -58,6 +59,7 @@ class DiffusionCurvature():
             comparison_method: _COMPARISON_METHOD = 'Ollivier',
             distance_method:function = phate_distances,
             dimest = None, # Dimension estimator to use. If none, defaults to kNN.
+            different_comparison_space_for_each_point = False, # If true, constructs a comparison space for every point in the manifold. If false, only constructs unique comparison spaces for each unique dimension.
     ):
         store_attr()
         if self.dimest is None:
@@ -109,12 +111,16 @@ class DiffusionCurvature():
                 dims_per_point = np.ones(G.P.shape[0], dtype=int)*dim
             else:
                 dims_per_point = dim
-        unique_dims = set(dims_per_point)
-        unique_flat_lazinesses = {}
-        for d in unique_dims:
-            G_flat = euclidean_comparison_space(G, dimension=d)
-            G_flat = self.power_diffusion_matrix(G_flat,t)
-            unique_flat_lazinesses = self.unsigned_curvature(G_flat, t, idx=0)
+        
+        if self.different_comparison_space_for_each_point:
+            pass
+        else:
+            unique_dims = set(dims_per_point)
+            unique_flat_lazinesses = {}
+            for d in unique_dims:
+                G_flat = euclidean_comparison_space(G, dimension=d)
+                G_flat = self.power_diffusion_matrix(G_flat,t)
+                unique_flat_lazinesses = self.unsigned_curvature(G_flat, t, idx=0)
     
 
 

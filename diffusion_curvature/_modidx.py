@@ -5,7 +5,21 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://professorwug.github.io',
                 'git_url': 'https://github.com/professorwug/diffusion_curvature',
                 'lib_path': 'diffusion_curvature'},
-  'syms': { 'diffusion_curvature.comparison_space': { 'diffusion_curvature.comparison_space.euclidean_comparison_graph': ( '1c comparison '
+  'syms': { 'diffusion_curvature.comparison_space': { 'diffusion_curvature.comparison_space.EuclideanComparisonSpace': ( '1c comparison '
+                                                                                                                         'space '
+                                                                                                                         'construction.html#euclideancomparisonspace',
+                                                                                                                         'diffusion_curvature/comparison_space.py'),
+                                                      'diffusion_curvature.comparison_space.EuclideanComparisonSpace.__call__': ( '1c '
+                                                                                                                                  'comparison '
+                                                                                                                                  'space '
+                                                                                                                                  'construction.html#euclideancomparisonspace.__call__',
+                                                                                                                                  'diffusion_curvature/comparison_space.py'),
+                                                      'diffusion_curvature.comparison_space.EuclideanComparisonSpace.setup': ( '1c '
+                                                                                                                               'comparison '
+                                                                                                                               'space '
+                                                                                                                               'construction.html#euclideancomparisonspace.setup',
+                                                                                                                               'diffusion_curvature/comparison_space.py'),
+                                                      'diffusion_curvature.comparison_space.euclidean_comparison_graph': ( '1c comparison '
                                                                                                                            'space '
                                                                                                                            'construction.html#euclidean_comparison_graph',
                                                                                                                            'diffusion_curvature/comparison_space.py'),
