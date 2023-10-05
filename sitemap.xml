@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://professorwug.github.io/diffusion_curvature/examples.html</loc>
+    <lastmod>2023-10-05T18:56:01.495Z</lastmod>
+  </url>
+  <url>
+    <loc>https://professorwug.github.io/diffusion_curvature/core (graphtools).html</loc>
+    <lastmod>2023-10-05T18:56:00.827Z</lastmod>
+  </url>
+  <url>
+    <loc>https://professorwug.github.io/diffusion_curvature/kernels.html</loc>
+    <lastmod>2023-10-05T18:55:59.619Z</lastmod>
+  </url>
+  <url>
+    <loc>https://professorwug.github.io/diffusion_curvature/datasets.html</loc>
+    <lastmod>2023-10-05T18:55:58.226Z</lastmod>
+  </url>
+  <url>
+    <loc>https://professorwug.github.io/diffusion_curvature/manifold distances.html</loc>
+    <lastmod>2023-10-05T18:55:57.150Z</lastmod>
+  </url>
+  <url>
+    <loc>https://professorwug.github.io/diffusion_curvature/index.html</loc>
+    <lastmod>2023-10-05T18:55:58.967Z</lastmod>
+  </url>
+  <url>
+    <loc>https://professorwug.github.io/diffusion_curvature/core (manifoldgraph).html</loc>
+    <lastmod>2023-10-05T18:56:00.167Z</lastmod>
+  </url>
+  <url>
+    <loc>https://professorwug.github.io/diffusion_curvature/core (pyg).html</loc>
+    <lastmod>2023-10-05T18:56:01.127Z</lastmod>
+  </url>
+</urlset>
