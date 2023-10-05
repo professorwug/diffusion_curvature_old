@@ -16,7 +16,7 @@ def wasserstein_spread_of_diffusion(
         Returns how "spread out" each diffusion is, with wasserstein distance
         Presumes that the manifold distances have been separately calculated
         """
-        return jnp.sum(D * Pt, axis=1)
+        return jnp.sum(D * Pt, axis=-1)
 
 # %% ../nbs/1b Diffusion Laziness.ipynb 12
 import jax.scipy
@@ -26,6 +26,9 @@ def entropy_of_diffusion(Pt):
         Returns the pointwise entropy of diffusion from the powered diffusion matrix in the input
         Assumes that Pt sums to 1
         """
+        Pt = (Pt + 1e-10) /(1 + 1e-10*Pt.shape[0]) # ensure, for differentiability, that there are no zeros in Pt, but that it still sums to 1.
         entropy_elementwise = jax.scipy.special.entr(Pt)
-        entropy_of_rows = jnp.sum(entropy_elementwise, axis=1)
+        entropy_of_rows = jnp.sum(entropy_elementwise, axis=-1)
+        # normalize so max value is 1
+        entropy_of_rows = entropy_of_rows / (-jnp.log(1/Pt.shape[0]))
         return entropy_of_rows

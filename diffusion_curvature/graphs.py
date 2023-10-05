@@ -118,9 +118,9 @@ def generic_kernel(
         sigma, # kernel bandwidth
         anisotropic_density_normalization, 
 
-):
+):  
     W = (1/(sigma*np.sqrt(2*jnp.pi)))*jnp.exp((-D**2)/(2*sigma**2))
-    D = jnp.diag(1/(jnp.sum(W,axis=1)**anisotropic_density_normalization))
+    D = jnp.diag(1/((jnp.sum(W,axis=1)+1e-8)**anisotropic_density_normalization))
     W = D @ W @ D
     return W
 
@@ -128,7 +128,7 @@ def generic_kernel(
 def diffusion_matrix_from_affinities(
         W
 ):
-    W = W + jnp.eye(len(W))*1e-5
+    W = W + jnp.eye(len(W))*1e-8
     D = jnp.diag(1/jnp.sum(W,axis=1))
     P = D @ W
     return P

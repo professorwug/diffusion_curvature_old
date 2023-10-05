@@ -7,7 +7,7 @@ __all__ = ['EuclideanComparisonSpace', 'fit_comparison_space_model', 'euclidean_
 from .graphs import generic_kernel, diffusion_matrix_from_affinities
 from .distances import phate_distances_differentiable, pairwise_euclidean
 from .utils import random_jnparray
-from .diffusion_laziness import wasserstein_spread_of_diffusion
+from .diffusion_laziness import wasserstein_spread_of_diffusion, entropy_of_diffusion
 import jax
 import jax.numpy as jnp
 from flax import linen as nn
@@ -18,6 +18,7 @@ class EuclideanComparisonSpace(nn.Module):
     num_points:int # num points to sample; best determined as a subset of the number of points in your manifold.
     jump_of_diffusion:jax.Array # the W1 distance from a single step of diffusion (t=1) to its origin
     fraction_of_points:float = 0.8
+    comparison_type:str = "entropy"
 
     def setup(self):
         # compute optimal number of points given dimension
@@ -44,15 +45,26 @@ class EuclideanComparisonSpace(nn.Module):
         )
 
     def __call__(self):
+        # print(f"sigma = {self.sigma} alpha = {self.anisotropic_density_normalization}")
         A = generic_kernel(self.D, self.sigma, self.anisotropic_density_normalization)
         P = diffusion_matrix_from_affinities(A)
+        # print(f"AFTER ALL THAT - the diffusion matrix has max {jnp.max(P)}")
+        if jnp.min(P) < 0: raise ValueError("P has negative values ", jnp.min(P))
         # D_manifold = phate_distances_differentiable(P)
-        W1 = wasserstein_spread_of_diffusion(self.D,P) # vector of all W1 values in comparison space.
-        # discard edge values; take only top 80% of W1s, corresponding to closest 80% of values.
-        # TODO: 80% is arbitrary and could be improved.
-        W1s_close_to_center = W1[:-self.num_useful_points]
+        match self.comparison_type:
+            case "wasserstein":
+                W1 = wasserstein_spread_of_diffusion(self.D,P) # vector of all W1 values in comparison space.
+                # discard edge values; take only top 80% of W1s, corresponding to closest 80% of values.
+                # TODO: 80% is arbitrary and could be improved.
+                spreads_near_center = W1[:-self.num_useful_points]
+            case "entropy":
+                # print(P)
+
+                H = entropy_of_diffusion(P)
+                spreads_near_center = H[:-self.num_useful_points]
+        
         return {
-            'mean jump difference':jnp.mean(W1s_close_to_center) - self.jump_of_diffusion, 
+            'mean jump difference':jnp.abs(jnp.mean(spreads_near_center) - self.jump_of_diffusion), 
             'A':A, 
             'P':P, 
             'D':self.D
@@ -75,10 +87,13 @@ def fit_comparison_space_model(model, max_epochs = 1000, verbose=False):
         if loss_val < 1e-5: break
         updates, opt_state = tx.update(grads,opt_state)
         params = optax.apply_updates(params,updates)
+        if verbose:
+            if i % 10 == 0: print(f"at {i}, loss is {loss_val}")
+        if loss_val != loss_val: raise ValueError("NANS! Look out!")
     if verbose: print("ending with loss value", loss_val)
     return params
 
-# %% ../nbs/1c Comparison Space Construction.ipynb 14
+# %% ../nbs/1c Comparison Space Construction.ipynb 17
 import pygsp
 import numpy as np
 
