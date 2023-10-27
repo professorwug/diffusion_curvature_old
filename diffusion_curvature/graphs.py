@@ -27,8 +27,8 @@ def diff_op(graph):
     Compute the diffusion operator for a pygsp graph.
     """
     assert isinstance(graph, pygsp.graphs.Graph)
-    K = set_diagonal(graph.W, 1)
-    diff_op_ = normalize(K, norm="l1", axis=1)
+    # K = set_diagonal(graph.W, 1)
+    diff_op_ = normalize(graph.W, norm="l1", axis=1)
     return diff_op_
 
 
