@@ -42,9 +42,14 @@ def torus(n=2000, c=2, a=1, noise=None, seed=None, use_guide_points = False):
     """
 
     assert a <= c, "That's not a torus"
+    if use_guide_points: n = n-3
 
     np.random.seed(seed)
-    theta = rejection_sample_for_torus(n-2, a, c)
+    theta = np.empty(0)
+    while len(theta) < n:
+        theta = np.append(theta, rejection_sample_for_torus(100, a, c))
+    theta = theta[:n]
+    # theta = rejection_sample_for_torus(n-2, a, c)
     phi = np.random.random((len(theta))) * 2.0 * np.pi
 
     data = np.zeros((len(theta), 3))
@@ -63,7 +68,7 @@ def torus(n=2000, c=2, a=1, noise=None, seed=None, use_guide_points = False):
 
     return data, ks
 
-# %% ../nbs/2 Datasets.ipynb 24
+# %% ../nbs/2 Datasets.ipynb 25
 def rejection_sample_for_hyperboloid(n,a,b,c,u_limit):
     theta = np.random.random(n)*2*np.pi
     u = (np.random.random(n)*2 - 1)*u_limit
@@ -106,7 +111,7 @@ def hyperboloid(n=2000,a=2,b=2,c=1, u_limit = 2, seed=None):
 
     return data, ks
 
-# %% ../nbs/2 Datasets.ipynb 30
+# %% ../nbs/2 Datasets.ipynb 31
 def rejection_sample_for_ellipsoid(n,a,b,c):
     theta = np.random.random(n)*2*np.pi
     phi = np.random.random(n)*2*np.pi
@@ -152,7 +157,7 @@ def ellipsoid(n=2000,a=3,b=2,c=1, seed=None, noise=None):
     
     return data, ks
 
-# %% ../nbs/2 Datasets.ipynb 34
+# %% ../nbs/2 Datasets.ipynb 35
 def sphere(n, radius=1,noise=0, use_guide_points = False):
     if use_guide_points:
         n = n - 1
@@ -167,7 +172,7 @@ def sphere(n, radius=1,noise=0, use_guide_points = False):
     ks = np.ones(n)*2
     return X, ks
 
-# %% ../nbs/2 Datasets.ipynb 42
+# %% ../nbs/2 Datasets.ipynb 43
 def rejection_sample_for_saddle(n,a,b):
     x = np.random.random(n)*2 - 1 # random values in -1, 1
     y = np.random.random(n)*2 - 1
@@ -214,7 +219,7 @@ def paraboloid(n=2000,a=1,b=-1, seed=None, use_guide_points = False):
     
     return data, ks
 
-# %% ../nbs/2 Datasets.ipynb 48
+# %% ../nbs/2 Datasets.ipynb 49
 def plane(n, dim=2):
     coords_2d = np.random.rand(n,dim)*2-1
     coords_2d = np.vstack([np.zeros(dim),coords_2d])

@@ -31,6 +31,10 @@ d = { 'settings': { 'branch': 'main',
                                                                                                                                'space '
                                                                                                                                'construction.html#euclideancomparisonspace.setup',
                                                                                                                                'diffusion_curvature/comparison_space.py'),
+                                                      'diffusion_curvature.comparison_space.average_flat_entropies': ( '1c comparison '
+                                                                                                                       'space '
+                                                                                                                       'construction.html#average_flat_entropies',
+                                                                                                                       'diffusion_curvature/comparison_space.py'),
                                                       'diffusion_curvature.comparison_space.construct_ndgrid': ( '1c comparison space '
                                                                                                                  'construction.html#construct_ndgrid',
                                                                                                                  'diffusion_curvature/comparison_space.py'),
@@ -52,9 +56,23 @@ d = { 'settings': { 'branch': 'main',
                                                       'diffusion_curvature.comparison_space.get_graph_type': ( '1c comparison space '
                                                                                                                'construction.html#get_graph_type',
                                                                                                                'diffusion_curvature/comparison_space.py')},
-            'diffusion_curvature.compute_diffusion_curvature_of_battery': { 'diffusion_curvature.compute_diffusion_curvature_of_battery.result_table': ( '3a2 '
-                                                                                                                                                         'hickok '
-                                                                                                                                                         'curvature '
+            'diffusion_curvature.compute_diffusion_curvature_of_battery': { 'diffusion_curvature.compute_diffusion_curvature_of_battery.compute_correlations': ( '3a1 '
+                                                                                                                                                                 'dc '
+                                                                                                                                                                 'of '
+                                                                                                                                                                 'battery.html#compute_correlations',
+                                                                                                                                                                 'diffusion_curvature/compute_diffusion_curvature_of_battery.py'),
+                                                                            'diffusion_curvature.compute_diffusion_curvature_of_battery.compute_curvature_on_battery': ( '3a1 '
+                                                                                                                                                                         'dc '
+                                                                                                                                                                         'of '
+                                                                                                                                                                         'battery.html#compute_curvature_on_battery',
+                                                                                                                                                                         'diffusion_curvature/compute_diffusion_curvature_of_battery.py'),
+                                                                            'diffusion_curvature.compute_diffusion_curvature_of_battery.compute_sign_score': ( '3a1 '
+                                                                                                                                                               'dc '
+                                                                                                                                                               'of '
+                                                                                                                                                               'battery.html#compute_sign_score',
+                                                                                                                                                               'diffusion_curvature/compute_diffusion_curvature_of_battery.py'),
+                                                                            'diffusion_curvature.compute_diffusion_curvature_of_battery.result_table': ( '3a1 '
+                                                                                                                                                         'dc '
                                                                                                                                                          'of '
                                                                                                                                                          'battery.html#result_table',
                                                                                                                                                          'diffusion_curvature/compute_diffusion_curvature_of_battery.py')},
@@ -493,6 +511,9 @@ d = { 'settings': { 'branch': 'main',
                                             'diffusion_curvature.hickok.scalar_curvature_est.nbr_distances': ( '3b hickok '
                                                                                                                'comparison.html#scalar_curvature_est.nbr_distances',
                                                                                                                'diffusion_curvature/hickok.py')},
+            'diffusion_curvature.hickok_battery': { 'diffusion_curvature.hickok_battery.result_table': ( '3a2 hickok curvature of '
+                                                                                                         'battery.html#result_table',
+                                                                                                         'diffusion_curvature/hickok_battery.py')},
             'diffusion_curvature.kernels': { 'diffusion_curvature.kernels.compute_anisotropic_affinities_from_graph': ( 'kernels.html#compute_anisotropic_affinities_from_graph',
                                                                                                                         'diffusion_curvature/kernels.py'),
                                              'diffusion_curvature.kernels.compute_anisotropic_diffusion_matrix_from_graph': ( 'kernels.html#compute_anisotropic_diffusion_matrix_from_graph',
