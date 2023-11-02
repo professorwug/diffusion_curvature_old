@@ -2,7 +2,7 @@
 
 # %% auto 0
 __all__ = ['EuclideanComparisonSpace', 'fit_comparison_space_model', 'get_graph_type', 'euclidean_comparison_graph',
-           'construct_ndgrid', 'construct_ndgrid_from_shape', 'diffusion_coordinates', 'average_flat_entropies']
+           'construct_ndgrid', 'construct_ndgrid_from_shape', 'diffusion_coordinates']
 
 # %% ../nbs/1c Comparison Space Construction.ipynb 5
 from .graphs import generic_kernel, diffusion_matrix_from_affinities
@@ -198,30 +198,3 @@ def diffusion_coordinates(G, t = 1, plot_evals = False):
     diff_map = diff_map
     return diff_map
 
-
-# %% ../nbs/1c Comparison Space Construction.ipynb 36
-import jax.numpy as jnp
-from .core import DiffusionCurvature
-from .utils import *
-
-def average_flat_entropies(
-        dim,
-        k,
-        t,
-        num_trials,
-):
-    DC = DiffusionCurvature(
-        laziness_method="Entropic",
-        flattening_method="Fixed",
-        comparison_method="Subtraction",
-        points_per_cluster=None, # construct separate comparison spaces around each point
-        comparison_space_size_factor=1
-    )
-    flat_spreads = jnp.zeros(num_trials)
-    num_points_in_comparison = 10000 # TODO: if we have more compute, we could adapt this to higher dimensions.
-    for i in range(num_trials):
-        Rn = jnp.concatenate([jnp.zeros((1,dim)), 2*random_jnparray(num_points_in_comparison-1, dim)-1])
-        G = graphtools.Graph(Rn, anisotropy=1, knn=knn, decay=None,).to_pygsp()
-        fs = DC.unsigned_curvature(G, t, idx=0)
-        flat_spreads = flat_spreads.at[i].set(fs)
-    return jnp.mean(flat_spreads)

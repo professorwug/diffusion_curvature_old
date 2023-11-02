@@ -31,10 +31,6 @@ d = { 'settings': { 'branch': 'main',
                                                                                                                                'space '
                                                                                                                                'construction.html#euclideancomparisonspace.setup',
                                                                                                                                'diffusion_curvature/comparison_space.py'),
-                                                      'diffusion_curvature.comparison_space.average_flat_entropies': ( '1c comparison '
-                                                                                                                       'space '
-                                                                                                                       'construction.html#average_flat_entropies',
-                                                                                                                       'diffusion_curvature/comparison_space.py'),
                                                       'diffusion_curvature.comparison_space.construct_ndgrid': ( '1c comparison space '
                                                                                                                  'construction.html#construct_ndgrid',
                                                                                                                  'diffusion_curvature/comparison_space.py'),
