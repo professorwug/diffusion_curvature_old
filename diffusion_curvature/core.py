@@ -21,7 +21,7 @@ from .graphs import diff_aff, diff_op, diffusion_matrix_from_affinities
 from .heat_diffusion import heat_diffusion_on_signal, kronecker_delta, jax_power_matrix
 from .diffusion_laziness import wasserstein_spread_of_diffusion, entropy_of_diffusion
 from .distances import phate_distances_differentiable
-from .comparison_space import EuclideanComparisonSpace, fit_comparison_space_model, euclidean_comparison_graph, construct_ndgrid_from_shape, diffusion_coordinates
+from .comparison_space import EuclideanComparisonSpace, fit_comparison_space_model, euclidean_comparison_graph, construct_ndgrid_from_shape, diffusion_coordinates, load_average_entropies
 from .clustering import enhanced_spectral_clustering
 from .normalizing_flows import neural_flattener
 from .vne import optimal_t_via_vne
@@ -30,7 +30,8 @@ import diffusion_curvature
 
 import torch
 
-import deepdish
+# import deepdish
+import h5py
 
 _DIFFUSION_TYPES = Literal['diffusion matrix','heat kernel']
 _LAZINESS_METHOD = Literal['Wasserstein','Entropic']
@@ -49,14 +50,16 @@ class DiffusionCurvature():
             points_per_cluster = None, # Number of points to use in each cluster when constructing comparison spaces. Each comparison space takes about 20sec to construct, and has different sampling and dimension. If 1, constructs a different comparison space for each point; if None, constructs just one comparison space.
             comparison_space_size_factor = 1, # Number of points in comparison space is the number of points in the original space divided by this factor.
             use_grid=False, # If True, uses a grid of points as the comparison space. If False, uses a random sample of points.            
-            max_flattening_epochs=50,        
+            max_flattening_epochs=50,     
+            comparison_space_file = "../data/entropies_averaged.h5"   
     ):
         store_attr()
         self.D = None
         if self.dimest is None:
             self.dimest = skdim.id.KNN()
         if self.flattening_method == "Mean Fixed":
-            self.SGT = deepdish.io.load("../data/sgt_peppers_averaged_flat_entropies.h5") # dict of dim x knn x ts containing precomputed flat entropies.
+            self.SGT = load_average_entropies(comparison_space_file)
+            # deepdish.io.load("../data/sgt_peppers_averaged_flat_entropies.h5") # dict of dim x knn x ts containing precomputed flat entropies.
 
     def unsigned_curvature(
             self,
@@ -156,8 +159,8 @@ class DiffusionCurvature():
                     # return G_euclidean, None # TODO: compute diffusion distances
                 case "Mean Fixed":
                     dimension_checks_out = dimension in self.SGT.keys()
-                    knn_checks_out = knn in self.SGT[dimension].keys()
-                    t_checks_out = t in self.SGT[dimension][knn].keys()
+                    knn_checks_out = knn in self.SGT[dimension].keys() if dimension_checks_out else False
+                    t_checks_out = t in self.SGT[dimension][knn].keys() if knn_checks_out else False
                     if not (dimension_checks_out and knn_checks_out and t_checks_out):
                         # compute the old way
                         print("Flat space not precomputed; computing now")

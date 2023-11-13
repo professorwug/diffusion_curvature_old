@@ -2,7 +2,7 @@
 
 # %% auto 0
 __all__ = ['EuclideanComparisonSpace', 'fit_comparison_space_model', 'get_graph_type', 'euclidean_comparison_graph',
-           'construct_ndgrid', 'construct_ndgrid_from_shape', 'diffusion_coordinates']
+           'construct_ndgrid', 'construct_ndgrid_from_shape', 'diffusion_coordinates', 'load_average_entropies']
 
 # %% ../nbs/1c Comparison Space Construction.ipynb 5
 from .graphs import generic_kernel, diffusion_matrix_from_affinities
@@ -198,3 +198,16 @@ def diffusion_coordinates(G, t = 1, plot_evals = False):
     diff_map = diff_map
     return diff_map
 
+
+# %% ../nbs/1c Comparison Space Construction.ipynb 36
+import h5py
+def load_average_entropies(filename):
+    d = {}
+    with h5py.File(filename,'r') as f:
+        for dim in f.keys():
+            d[int(dim)] = {}
+            for knn in f[dim].keys():
+                d[int(dim)][int(knn)] = {}
+                for t in f[dim][knn].keys():
+                    d[int(dim)][int(knn)][int(t)] = f[dim][knn][t][()]
+    return d
