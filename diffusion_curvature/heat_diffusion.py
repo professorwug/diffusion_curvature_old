@@ -12,7 +12,7 @@ def jax_power_matrix(
           P:jax.Array, 
           t:int,
           ):
-            return jnp.linalg.matrix_power(P, t).block_until_ready()
+            return jnp.linalg.matrix_power(P, t)
 
 # %% ../nbs/1a Heat Diffusion.ipynb 11
 ## Code from https://github.com/sibyllema/Fast-Multiscale-Diffusion-on-Graphs

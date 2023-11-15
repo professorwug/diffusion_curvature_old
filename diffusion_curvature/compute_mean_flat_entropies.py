@@ -40,7 +40,7 @@ def create_mean_entropy_database(
     outfile = "../data/entropies_averaged.h5",
     dimensions:Param("(Intrinsic) Dimensions to Take Mean Entropies over", int, nargs='+') = [1,2,3,4,5,6],
     knns:Param("k-nearest neighbor values to compute", int, nargs='+') = [5,10,15],
-    ts:Param("time values to compute", int, nargs='+') = [25],
+    ts:Param("time values to compute", int, nargs='+') = [25,30,35],
 ):
     # load the database
     f = h5py.File(outfile,'a')
