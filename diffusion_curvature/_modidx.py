@@ -142,6 +142,9 @@ d = { 'settings': { 'branch': 'main',
                                               'diffusion_curvature.datasets.rejection_sample_for_torus': ( '2 '
                                                                                                            'datasets.html#rejection_sample_for_torus',
                                                                                                            'diffusion_curvature/datasets.py'),
+                                              'diffusion_curvature.datasets.rejection_sample_from_saddle': ( '2 '
+                                                                                                             'datasets.html#rejection_sample_from_saddle',
+                                                                                                             'diffusion_curvature/datasets.py'),
                                               'diffusion_curvature.datasets.sphere': ( '2 datasets.html#sphere',
                                                                                        'diffusion_curvature/datasets.py'),
                                               'diffusion_curvature.datasets.torus': ( '2 datasets.html#torus',

@@ -89,7 +89,6 @@ class DiffusionCurvature():
         match self.laziness_method:
             case "Wasserstein":
                 if D is None: D = phate_distances_differentiable(Pt) #TODO: Could be more efficient here if there's an idx
-                print(D[0])
                 laziness = wasserstein_spread_of_diffusion(D,Pt) if idx is None else wasserstein_spread_of_diffusion(D[idx],Pt[idx])
                 if _also_return_first_scale: laziness_nought = wasserstein_spread_of_diffusion(D,P)
             case "Entropic":
