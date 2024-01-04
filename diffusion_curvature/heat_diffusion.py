@@ -3,7 +3,8 @@
 # %% auto 0
 __all__ = ['jax_power_matrix', 'g', 'get_bound_eps_generic', 'get_bound_eta_generic', 'get_bound_eta_specific', 'E',
            'get_bound_bergamaschi_generic', 'get_bound_bergamaschi_specific', 'reverse_bound',
-           'compute_chebychev_coeff_all', 'expm_multiply', 'heat_diffusion_on_signal', 'kronecker_delta']
+           'compute_chebychev_coeff_all', 'expm_multiply', 'heat_diffusion_on_signal', 'kronecker_delta',
+           'heat_diffusion_from_dirac']
 
 # %% ../nbs/1a Heat Diffusion.ipynb 6
 import jax.numpy as jnp
@@ -246,3 +247,20 @@ def kronecker_delta(
     x = jnp.zeros(length)
     x = x.at[idx].set(1)
     return x
+
+# %% ../nbs/1a Heat Diffusion.ipynb 18
+def heat_diffusion_from_dirac(
+    G:pygsp.graphs.Graph, # pyGSP graph
+    t, # time of diffusion, or list of times
+    idx = None, # if given, returns just the diffusion of a dirac at this idx. Else, diffuses at every idx
+):
+    """
+    Returns array of size (len t) x (num_idxs) x (num nodes) 
+    If idx is None, returns heat diffusion on each node.
+    """
+    if idx is not None:
+        return heat_diffusion_on_signal(G, kronecker_delta(G.W.shape[0], idx=idx), t)
+    else:
+        diracs = np.eye(G.W.shape[0])
+        G.estimate_lmax()
+        return jnp.array(expm_multiply(G.L, diracs, G.lmax/2,t))

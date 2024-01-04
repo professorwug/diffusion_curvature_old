@@ -5,16 +5,17 @@ __all__ = ['average_flat_entropies', 'create_mean_entropy_database', 'load_avera
 
 # %% ../nbs/1c1 Mean Flat Entropies.ipynb 2
 import jax.numpy as jnp
-from .core import DiffusionCurvature
+from .core import DiffusionCurvature, get_adaptive_graph
 from .utils import *
 from tqdm.auto import tqdm
 import graphtools
 
 def average_flat_entropies(
         dim,
-        k,
         t,
         num_trials,
+        num_points_in_comparison = 10000,
+        graph_former = get_adaptive_graph
 ):
     DC = DiffusionCurvature(
         laziness_method="Entropic",
@@ -24,10 +25,9 @@ def average_flat_entropies(
         comparison_space_size_factor=1
     )
     flat_spreads = jnp.zeros(num_trials)
-    num_points_in_comparison = 10000 # TODO: if we have more compute, we could adapt this to higher dimensions.
     for i in range(num_trials):
         Rn = jnp.concatenate([jnp.zeros((1,dim)), 2*random_jnparray(num_points_in_comparison-1, dim)-1])
-        G = graphtools.Graph(Rn, anisotropy=1, knn=k, decay=None,).to_pygsp()
+        G = graph_former(Rn) #graphtools.Graph(Rn, anisotropy=1, knn=k, decay=None,).to_pygsp()
         fs = DC.unsigned_curvature(G, t, idx=0)
         flat_spreads = flat_spreads.at[i].set(fs)
     return jnp.mean(flat_spreads)

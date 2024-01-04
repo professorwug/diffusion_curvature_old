@@ -13,7 +13,8 @@ def enhanced_spectral_clustering(
         num_clusters,
         curvature_weighting=1
         ):
-    L = G.L.todense()
+    A = jnp.array(G.W)
+    L = jnp.diag(jnp.sum(A,axis=1)) - A # D - A
     w, v = jnp.linalg.eigh(L) 
     X = v[:, 1:dim+1] # eigencoords
     # concatenate ks to X

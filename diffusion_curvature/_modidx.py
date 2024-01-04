@@ -56,24 +56,36 @@ d = { 'settings': { 'branch': 'main',
                                                                                                                        'space '
                                                                                                                        'construction.html#load_average_entropies',
                                                                                                                        'diffusion_curvature/comparison_space.py')},
-            'diffusion_curvature.compute_diffusion_curvature_of_battery': { 'diffusion_curvature.compute_diffusion_curvature_of_battery.compute_correlations': ( '3a1 '
+            'diffusion_curvature.compute_diffusion_curvature_of_battery': { 'diffusion_curvature.compute_diffusion_curvature_of_battery.compute_correlations': ( '3a1a '
                                                                                                                                                                  'dc '
                                                                                                                                                                  'of '
+                                                                                                                                                                 'lowd '
+                                                                                                                                                                 'high '
+                                                                                                                                                                 'sample '
                                                                                                                                                                  'battery.html#compute_correlations',
                                                                                                                                                                  'diffusion_curvature/compute_diffusion_curvature_of_battery.py'),
-                                                                            'diffusion_curvature.compute_diffusion_curvature_of_battery.compute_curvature_on_battery': ( '3a1 '
+                                                                            'diffusion_curvature.compute_diffusion_curvature_of_battery.compute_curvature_on_battery': ( '3a1a '
                                                                                                                                                                          'dc '
                                                                                                                                                                          'of '
+                                                                                                                                                                         'lowd '
+                                                                                                                                                                         'high '
+                                                                                                                                                                         'sample '
                                                                                                                                                                          'battery.html#compute_curvature_on_battery',
                                                                                                                                                                          'diffusion_curvature/compute_diffusion_curvature_of_battery.py'),
-                                                                            'diffusion_curvature.compute_diffusion_curvature_of_battery.compute_sign_score': ( '3a1 '
+                                                                            'diffusion_curvature.compute_diffusion_curvature_of_battery.compute_sign_score': ( '3a1a '
                                                                                                                                                                'dc '
                                                                                                                                                                'of '
+                                                                                                                                                               'lowd '
+                                                                                                                                                               'high '
+                                                                                                                                                               'sample '
                                                                                                                                                                'battery.html#compute_sign_score',
                                                                                                                                                                'diffusion_curvature/compute_diffusion_curvature_of_battery.py'),
-                                                                            'diffusion_curvature.compute_diffusion_curvature_of_battery.result_table': ( '3a1 '
+                                                                            'diffusion_curvature.compute_diffusion_curvature_of_battery.result_table': ( '3a1a '
                                                                                                                                                          'dc '
                                                                                                                                                          'of '
+                                                                                                                                                         'lowd '
+                                                                                                                                                         'high '
+                                                                                                                                                         'sample '
                                                                                                                                                          'battery.html#result_table',
                                                                                                                                                          'diffusion_curvature/compute_diffusion_curvature_of_battery.py')},
             'diffusion_curvature.compute_mean_flat_entropies': { 'diffusion_curvature.compute_mean_flat_entropies.average_flat_entropies': ( '1c1 '
@@ -107,8 +119,14 @@ d = { 'settings': { 'branch': 'main',
                                           'diffusion_curvature.core.DiffusionCurvature.unsigned_curvature': ( '1 '
                                                                                                               'core.html#diffusioncurvature.unsigned_curvature',
                                                                                                               'diffusion_curvature/core.py'),
+                                          'diffusion_curvature.core.SimpleGraph': ( '1 core.html#simplegraph',
+                                                                                    'diffusion_curvature/core.py'),
                                           'diffusion_curvature.core.fill_diagonal': ( '1 core.html#fill_diagonal',
-                                                                                      'diffusion_curvature/core.py')},
+                                                                                      'diffusion_curvature/core.py'),
+                                          'diffusion_curvature.core.get_adaptive_graph': ( '1 core.html#get_adaptive_graph',
+                                                                                           'diffusion_curvature/core.py'),
+                                          'diffusion_curvature.core.graphtools_graph_from_data': ( '1 core.html#graphtools_graph_from_data',
+                                                                                                   'diffusion_curvature/core.py')},
             'diffusion_curvature.core_jax': { 'diffusion_curvature.core_jax.DiffusionCurvature': ( '1 core.html#diffusioncurvature',
                                                                                                    'diffusion_curvature/core_jax.py'),
                                               'diffusion_curvature.core_jax.DiffusionCurvature.__init__': ( '1 '
@@ -235,6 +253,9 @@ d = { 'settings': { 'branch': 'main',
                                                     'diffusion_curvature.heat_diffusion.get_bound_eta_specific': ( '1a heat '
                                                                                                                    'diffusion.html#get_bound_eta_specific',
                                                                                                                    'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.heat_diffusion_from_dirac': ( '1a heat '
+                                                                                                                      'diffusion.html#heat_diffusion_from_dirac',
+                                                                                                                      'diffusion_curvature/heat_diffusion.py'),
                                                     'diffusion_curvature.heat_diffusion.heat_diffusion_on_signal': ( '1a heat '
                                                                                                                      'diffusion.html#heat_diffusion_on_signal',
                                                                                                                      'diffusion_curvature/heat_diffusion.py'),
@@ -355,6 +376,8 @@ d = { 'settings': { 'branch': 'main',
                                                                                                'diffusion_curvature/kernels.py'),
                                              'diffusion_curvature.kernels.gaussian_kernel': ( 'kernels.html#gaussian_kernel',
                                                                                               'diffusion_curvature/kernels.py'),
+                                             'diffusion_curvature.kernels.knn_graph': ( 'kernels.html#knn_graph',
+                                                                                        'diffusion_curvature/kernels.py'),
                                              'diffusion_curvature.kernels.median_heuristic': ( 'kernels.html#median_heuristic',
                                                                                                'diffusion_curvature/kernels.py'),
                                              'diffusion_curvature.kernels.plot_3d': ( 'kernels.html#plot_3d',
