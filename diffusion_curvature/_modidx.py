@@ -5,29 +5,200 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://professorwug.github.io',
                 'git_url': 'https://github.com/professorwug/diffusion_curvature',
                 'lib_path': 'diffusion_curvature'},
-  'syms': { 'diffusion_curvature.core': {'diffusion_curvature.core.foo': ('core.html#foo', 'diffusion_curvature/core.py')},
-            'diffusion_curvature.datasets': { 'diffusion_curvature.datasets.ellipsoid': ( 'datasets.html#ellipsoid',
+  'syms': { 'diffusion_curvature.1d_clustering': { 'diffusion_curvature.1d_clustering.enhanced_spectral_clustering': ( '1d curvature '
+                                                                                                                       'enhanced spectral '
+                                                                                                                       'clustering.html#enhanced_spectral_clustering',
+                                                                                                                       'diffusion_curvature/1d_clustering.py')},
+            'diffusion_curvature.benchmarking': { 'diffusion_curvature.benchmarking.create_battery': ( '3 benchmarking.html#create_battery',
+                                                                                                       'diffusion_curvature/benchmarking.py'),
+                                                  'diffusion_curvature.benchmarking.main': ( '3 benchmarking.html#main',
+                                                                                             'diffusion_curvature/benchmarking.py')},
+            'diffusion_curvature.clustering': { 'diffusion_curvature.clustering.enhanced_spectral_clustering': ( '1d curvature enhanced '
+                                                                                                                 'spectral '
+                                                                                                                 'clustering.html#enhanced_spectral_clustering',
+                                                                                                                 'diffusion_curvature/clustering.py')},
+            'diffusion_curvature.comparison_space': { 'diffusion_curvature.comparison_space.EuclideanComparisonSpace': ( '1c comparison '
+                                                                                                                         'space '
+                                                                                                                         'construction.html#euclideancomparisonspace',
+                                                                                                                         'diffusion_curvature/comparison_space.py'),
+                                                      'diffusion_curvature.comparison_space.EuclideanComparisonSpace.__call__': ( '1c '
+                                                                                                                                  'comparison '
+                                                                                                                                  'space '
+                                                                                                                                  'construction.html#euclideancomparisonspace.__call__',
+                                                                                                                                  'diffusion_curvature/comparison_space.py'),
+                                                      'diffusion_curvature.comparison_space.EuclideanComparisonSpace.setup': ( '1c '
+                                                                                                                               'comparison '
+                                                                                                                               'space '
+                                                                                                                               'construction.html#euclideancomparisonspace.setup',
+                                                                                                                               'diffusion_curvature/comparison_space.py'),
+                                                      'diffusion_curvature.comparison_space.construct_ndgrid': ( '1c comparison space '
+                                                                                                                 'construction.html#construct_ndgrid',
+                                                                                                                 'diffusion_curvature/comparison_space.py'),
+                                                      'diffusion_curvature.comparison_space.construct_ndgrid_from_shape': ( '1c comparison '
+                                                                                                                            'space '
+                                                                                                                            'construction.html#construct_ndgrid_from_shape',
+                                                                                                                            'diffusion_curvature/comparison_space.py'),
+                                                      'diffusion_curvature.comparison_space.diffusion_coordinates': ( '1c comparison space '
+                                                                                                                      'construction.html#diffusion_coordinates',
+                                                                                                                      'diffusion_curvature/comparison_space.py'),
+                                                      'diffusion_curvature.comparison_space.euclidean_comparison_graph': ( '1c comparison '
+                                                                                                                           'space '
+                                                                                                                           'construction.html#euclidean_comparison_graph',
+                                                                                                                           'diffusion_curvature/comparison_space.py'),
+                                                      'diffusion_curvature.comparison_space.fit_comparison_space_model': ( '1c comparison '
+                                                                                                                           'space '
+                                                                                                                           'construction.html#fit_comparison_space_model',
+                                                                                                                           'diffusion_curvature/comparison_space.py'),
+                                                      'diffusion_curvature.comparison_space.get_graph_type': ( '1c comparison space '
+                                                                                                               'construction.html#get_graph_type',
+                                                                                                               'diffusion_curvature/comparison_space.py'),
+                                                      'diffusion_curvature.comparison_space.load_average_entropies': ( '1c comparison '
+                                                                                                                       'space '
+                                                                                                                       'construction.html#load_average_entropies',
+                                                                                                                       'diffusion_curvature/comparison_space.py')},
+            'diffusion_curvature.compute_diffusion_curvature_of_battery': { 'diffusion_curvature.compute_diffusion_curvature_of_battery.compute_correlations': ( '3a1a '
+                                                                                                                                                                 'dc '
+                                                                                                                                                                 'of '
+                                                                                                                                                                 'lowd '
+                                                                                                                                                                 'high '
+                                                                                                                                                                 'sample '
+                                                                                                                                                                 'battery.html#compute_correlations',
+                                                                                                                                                                 'diffusion_curvature/compute_diffusion_curvature_of_battery.py'),
+                                                                            'diffusion_curvature.compute_diffusion_curvature_of_battery.compute_curvature_on_battery': ( '3a1a '
+                                                                                                                                                                         'dc '
+                                                                                                                                                                         'of '
+                                                                                                                                                                         'lowd '
+                                                                                                                                                                         'high '
+                                                                                                                                                                         'sample '
+                                                                                                                                                                         'battery.html#compute_curvature_on_battery',
+                                                                                                                                                                         'diffusion_curvature/compute_diffusion_curvature_of_battery.py'),
+                                                                            'diffusion_curvature.compute_diffusion_curvature_of_battery.compute_sign_score': ( '3a1a '
+                                                                                                                                                               'dc '
+                                                                                                                                                               'of '
+                                                                                                                                                               'lowd '
+                                                                                                                                                               'high '
+                                                                                                                                                               'sample '
+                                                                                                                                                               'battery.html#compute_sign_score',
+                                                                                                                                                               'diffusion_curvature/compute_diffusion_curvature_of_battery.py'),
+                                                                            'diffusion_curvature.compute_diffusion_curvature_of_battery.result_table': ( '3a1a '
+                                                                                                                                                         'dc '
+                                                                                                                                                         'of '
+                                                                                                                                                         'lowd '
+                                                                                                                                                         'high '
+                                                                                                                                                         'sample '
+                                                                                                                                                         'battery.html#result_table',
+                                                                                                                                                         'diffusion_curvature/compute_diffusion_curvature_of_battery.py')},
+            'diffusion_curvature.compute_mean_flat_entropies': { 'diffusion_curvature.compute_mean_flat_entropies.average_flat_entropies': ( '1c1 '
+                                                                                                                                             'mean '
+                                                                                                                                             'flat '
+                                                                                                                                             'entropies.html#average_flat_entropies',
+                                                                                                                                             'diffusion_curvature/compute_mean_flat_entropies.py'),
+                                                                 'diffusion_curvature.compute_mean_flat_entropies.create_mean_entropy_database': ( '1c1 '
+                                                                                                                                                   'mean '
+                                                                                                                                                   'flat '
+                                                                                                                                                   'entropies.html#create_mean_entropy_database',
+                                                                                                                                                   'diffusion_curvature/compute_mean_flat_entropies.py'),
+                                                                 'diffusion_curvature.compute_mean_flat_entropies.load_average_entropies': ( '1c1 '
+                                                                                                                                             'mean '
+                                                                                                                                             'flat '
+                                                                                                                                             'entropies.html#load_average_entropies',
+                                                                                                                                             'diffusion_curvature/compute_mean_flat_entropies.py')},
+            'diffusion_curvature.construct_battery': { 'diffusion_curvature.construct_battery.create_battery': ( '3a construct '
+                                                                                                                 'battery.html#create_battery',
+                                                                                                                 'diffusion_curvature/construct_battery.py'),
+                                                       'diffusion_curvature.construct_battery.main': ( '3a construct battery.html#main',
+                                                                                                       'diffusion_curvature/construct_battery.py')},
+            'diffusion_curvature.core': { 'diffusion_curvature.core.DiffusionCurvature': ( '1 core.html#diffusioncurvature',
+                                                                                           'diffusion_curvature/core.py'),
+                                          'diffusion_curvature.core.DiffusionCurvature.__init__': ( '1 '
+                                                                                                    'core.html#diffusioncurvature.__init__',
+                                                                                                    'diffusion_curvature/core.py'),
+                                          'diffusion_curvature.core.DiffusionCurvature.curvature': ( '1 '
+                                                                                                     'core.html#diffusioncurvature.curvature',
+                                                                                                     'diffusion_curvature/core.py'),
+                                          'diffusion_curvature.core.DiffusionCurvature.unsigned_curvature': ( '1 '
+                                                                                                              'core.html#diffusioncurvature.unsigned_curvature',
+                                                                                                              'diffusion_curvature/core.py'),
+                                          'diffusion_curvature.core.SimpleGraph': ( '1 core.html#simplegraph',
+                                                                                    'diffusion_curvature/core.py'),
+                                          'diffusion_curvature.core.fill_diagonal': ( '1 core.html#fill_diagonal',
+                                                                                      'diffusion_curvature/core.py'),
+                                          'diffusion_curvature.core.get_adaptive_graph': ( '1 core.html#get_adaptive_graph',
+                                                                                           'diffusion_curvature/core.py'),
+                                          'diffusion_curvature.core.graphtools_graph_from_data': ( '1 core.html#graphtools_graph_from_data',
+                                                                                                   'diffusion_curvature/core.py')},
+            'diffusion_curvature.core_jax': { 'diffusion_curvature.core_jax.DiffusionCurvature': ( '1 core.html#diffusioncurvature',
+                                                                                                   'diffusion_curvature/core_jax.py'),
+                                              'diffusion_curvature.core_jax.DiffusionCurvature.__init__': ( '1 '
+                                                                                                            'core.html#diffusioncurvature.__init__',
+                                                                                                            'diffusion_curvature/core_jax.py'),
+                                              'diffusion_curvature.core_jax.DiffusionCurvature.curvature': ( '1 '
+                                                                                                             'core.html#diffusioncurvature.curvature',
+                                                                                                             'diffusion_curvature/core_jax.py'),
+                                              'diffusion_curvature.core_jax.DiffusionCurvature.unsigned_curvature': ( '1 '
+                                                                                                                      'core.html#diffusioncurvature.unsigned_curvature',
+                                                                                                                      'diffusion_curvature/core_jax.py'),
+                                              'diffusion_curvature.core_jax.fill_diagonal': ( '1 core.html#fill_diagonal',
+                                                                                              'diffusion_curvature/core_jax.py')},
+            'diffusion_curvature.datasets': { 'diffusion_curvature.datasets.ellipsoid': ( '2 datasets.html#ellipsoid',
                                                                                           'diffusion_curvature/datasets.py'),
-                                              'diffusion_curvature.datasets.hyperboloid': ( 'datasets.html#hyperboloid',
+                                              'diffusion_curvature.datasets.hyperboloid': ( '2 datasets.html#hyperboloid',
                                                                                             'diffusion_curvature/datasets.py'),
-                                              'diffusion_curvature.datasets.paraboloid': ( 'datasets.html#paraboloid',
+                                              'diffusion_curvature.datasets.paraboloid': ( '2 datasets.html#paraboloid',
                                                                                            'diffusion_curvature/datasets.py'),
-                                              'diffusion_curvature.datasets.plane': ( 'datasets.html#plane',
+                                              'diffusion_curvature.datasets.plane': ( '2 datasets.html#plane',
                                                                                       'diffusion_curvature/datasets.py'),
-                                              'diffusion_curvature.datasets.rejection_sample_for_ellipsoid': ( 'datasets.html#rejection_sample_for_ellipsoid',
+                                              'diffusion_curvature.datasets.rejection_sample_for_ellipsoid': ( '2 '
+                                                                                                               'datasets.html#rejection_sample_for_ellipsoid',
                                                                                                                'diffusion_curvature/datasets.py'),
-                                              'diffusion_curvature.datasets.rejection_sample_for_hyperboloid': ( 'datasets.html#rejection_sample_for_hyperboloid',
+                                              'diffusion_curvature.datasets.rejection_sample_for_hyperboloid': ( '2 '
+                                                                                                                 'datasets.html#rejection_sample_for_hyperboloid',
                                                                                                                  'diffusion_curvature/datasets.py'),
-                                              'diffusion_curvature.datasets.rejection_sample_for_saddle': ( 'datasets.html#rejection_sample_for_saddle',
+                                              'diffusion_curvature.datasets.rejection_sample_for_saddle': ( '2 '
+                                                                                                            'datasets.html#rejection_sample_for_saddle',
                                                                                                             'diffusion_curvature/datasets.py'),
-                                              'diffusion_curvature.datasets.rejection_sample_for_torus': ( 'datasets.html#rejection_sample_for_torus',
+                                              'diffusion_curvature.datasets.rejection_sample_for_torus': ( '2 '
+                                                                                                           'datasets.html#rejection_sample_for_torus',
                                                                                                            'diffusion_curvature/datasets.py'),
-                                              'diffusion_curvature.datasets.sphere': ( 'datasets.html#sphere',
+                                              'diffusion_curvature.datasets.rejection_sample_from_saddle': ( '2 '
+                                                                                                             'datasets.html#rejection_sample_from_saddle',
+                                                                                                             'diffusion_curvature/datasets.py'),
+                                              'diffusion_curvature.datasets.sphere': ( '2 datasets.html#sphere',
                                                                                        'diffusion_curvature/datasets.py'),
-                                              'diffusion_curvature.datasets.torus': ( 'datasets.html#torus',
+                                              'diffusion_curvature.datasets.torus': ( '2 datasets.html#torus',
                                                                                       'diffusion_curvature/datasets.py')},
-            'diffusion_curvature.distances': { 'diffusion_curvature.distances.phate_distances': ( 'manifold distances.html#phate_distances',
-                                                                                                  'diffusion_curvature/distances.py')},
+            'diffusion_curvature.diffusion_laziness': { 'diffusion_curvature.diffusion_laziness.entropy_of_diffusion': ( '1b diffusion '
+                                                                                                                         'laziness.html#entropy_of_diffusion',
+                                                                                                                         'diffusion_curvature/diffusion_laziness.py'),
+                                                        'diffusion_curvature.diffusion_laziness.wasserstein_spread_of_diffusion': ( '1b '
+                                                                                                                                    'diffusion '
+                                                                                                                                    'laziness.html#wasserstein_spread_of_diffusion',
+                                                                                                                                    'diffusion_curvature/diffusion_laziness.py')},
+            'diffusion_curvature.distances': { 'diffusion_curvature.distances.pairwise_euclidean': ( 'manifold '
+                                                                                                     'distances.html#pairwise_euclidean',
+                                                                                                     'diffusion_curvature/distances.py'),
+                                               'diffusion_curvature.distances.phate_distances': ( 'manifold distances.html#phate_distances',
+                                                                                                  'diffusion_curvature/distances.py'),
+                                               'diffusion_curvature.distances.phate_distances_differentiable': ( 'manifold '
+                                                                                                                 'distances.html#phate_distances_differentiable',
+                                                                                                                 'diffusion_curvature/distances.py')},
+            'diffusion_curvature.graphs': { 'diffusion_curvature.graphs.diff_aff': ( 'graphs.html#diff_aff',
+                                                                                     'diffusion_curvature/graphs.py'),
+                                            'diffusion_curvature.graphs.diff_op': ('graphs.html#diff_op', 'diffusion_curvature/graphs.py'),
+                                            'diffusion_curvature.graphs.diffusion_matrix_from_affinities': ( 'graphs.html#diffusion_matrix_from_affinities',
+                                                                                                             'diffusion_curvature/graphs.py'),
+                                            'diffusion_curvature.graphs.generic_kernel': ( 'graphs.html#generic_kernel',
+                                                                                           'diffusion_curvature/graphs.py'),
+                                            'diffusion_curvature.graphs.get_alpha_decay_graph': ( 'graphs.html#get_alpha_decay_graph',
+                                                                                                  'diffusion_curvature/graphs.py'),
+                                            'diffusion_curvature.graphs.get_knn_graph': ( 'graphs.html#get_knn_graph',
+                                                                                          'diffusion_curvature/graphs.py'),
+                                            'diffusion_curvature.graphs.get_scanpy_graph': ( 'graphs.html#get_scanpy_graph',
+                                                                                             'diffusion_curvature/graphs.py'),
+                                            'diffusion_curvature.graphs.get_umap_graph': ( 'graphs.html#get_umap_graph',
+                                                                                           'diffusion_curvature/graphs.py'),
+                                            'diffusion_curvature.graphs.kernel_degree': ( 'graphs.html#kernel_degree',
+                                                                                          'diffusion_curvature/graphs.py')},
             'diffusion_curvature.graphtools': { 'diffusion_curvature.graphtools.DiffusionCurvature': ( 'core '
                                                                                                        '(graphtools).html#diffusioncurvature',
                                                                                                        'diffusion_curvature/graphtools.py'),
@@ -57,6 +228,146 @@ d = { 'settings': { 'branch': 'main',
                                                 'diffusion_curvature.graphtools.plot_manifold_curvature': ( 'core '
                                                                                                             '(graphtools).html#plot_manifold_curvature',
                                                                                                             'diffusion_curvature/graphtools.py')},
+            'diffusion_curvature.heat_diffusion': { 'diffusion_curvature.heat_diffusion.E': ( '1a heat diffusion.html#e',
+                                                                                              'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.compute_chebychev_coeff_all': ( '1a heat '
+                                                                                                                        'diffusion.html#compute_chebychev_coeff_all',
+                                                                                                                        'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.expm_multiply': ( '1a heat '
+                                                                                                          'diffusion.html#expm_multiply',
+                                                                                                          'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.g': ( '1a heat diffusion.html#g',
+                                                                                              'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.get_bound_bergamaschi_generic': ( '1a heat '
+                                                                                                                          'diffusion.html#get_bound_bergamaschi_generic',
+                                                                                                                          'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.get_bound_bergamaschi_specific': ( '1a heat '
+                                                                                                                           'diffusion.html#get_bound_bergamaschi_specific',
+                                                                                                                           'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.get_bound_eps_generic': ( '1a heat '
+                                                                                                                  'diffusion.html#get_bound_eps_generic',
+                                                                                                                  'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.get_bound_eta_generic': ( '1a heat '
+                                                                                                                  'diffusion.html#get_bound_eta_generic',
+                                                                                                                  'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.get_bound_eta_specific': ( '1a heat '
+                                                                                                                   'diffusion.html#get_bound_eta_specific',
+                                                                                                                   'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.heat_diffusion_from_dirac': ( '1a heat '
+                                                                                                                      'diffusion.html#heat_diffusion_from_dirac',
+                                                                                                                      'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.heat_diffusion_on_signal': ( '1a heat '
+                                                                                                                     'diffusion.html#heat_diffusion_on_signal',
+                                                                                                                     'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.jax_power_matrix': ( '1a heat '
+                                                                                                             'diffusion.html#jax_power_matrix',
+                                                                                                             'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.kronecker_delta': ( '1a heat '
+                                                                                                            'diffusion.html#kronecker_delta',
+                                                                                                            'diffusion_curvature/heat_diffusion.py'),
+                                                    'diffusion_curvature.heat_diffusion.reverse_bound': ( '1a heat '
+                                                                                                          'diffusion.html#reverse_bound',
+                                                                                                          'diffusion_curvature/heat_diffusion.py')},
+            'diffusion_curvature.heatkernel': { 'diffusion_curvature.heatkernel.E': ( 'neumann heat kernel via chebyshev '
+                                                                                      'approximation.html#e',
+                                                                                      'diffusion_curvature/heatkernel.py'),
+                                                'diffusion_curvature.heatkernel.compute_chebychev_coeff_all': ( 'neumann heat kernel via '
+                                                                                                                'chebyshev '
+                                                                                                                'approximation.html#compute_chebychev_coeff_all',
+                                                                                                                'diffusion_curvature/heatkernel.py'),
+                                                'diffusion_curvature.heatkernel.expm_multiply': ( 'neumann heat kernel via chebyshev '
+                                                                                                  'approximation.html#expm_multiply',
+                                                                                                  'diffusion_curvature/heatkernel.py'),
+                                                'diffusion_curvature.heatkernel.g': ( 'neumann heat kernel via chebyshev '
+                                                                                      'approximation.html#g',
+                                                                                      'diffusion_curvature/heatkernel.py'),
+                                                'diffusion_curvature.heatkernel.get_bound_bergamaschi_generic': ( 'neumann heat kernel via '
+                                                                                                                  'chebyshev '
+                                                                                                                  'approximation.html#get_bound_bergamaschi_generic',
+                                                                                                                  'diffusion_curvature/heatkernel.py'),
+                                                'diffusion_curvature.heatkernel.get_bound_bergamaschi_specific': ( 'neumann heat kernel '
+                                                                                                                   'via chebyshev '
+                                                                                                                   'approximation.html#get_bound_bergamaschi_specific',
+                                                                                                                   'diffusion_curvature/heatkernel.py'),
+                                                'diffusion_curvature.heatkernel.get_bound_eps_generic': ( 'neumann heat kernel via '
+                                                                                                          'chebyshev '
+                                                                                                          'approximation.html#get_bound_eps_generic',
+                                                                                                          'diffusion_curvature/heatkernel.py'),
+                                                'diffusion_curvature.heatkernel.get_bound_eta_generic': ( 'neumann heat kernel via '
+                                                                                                          'chebyshev '
+                                                                                                          'approximation.html#get_bound_eta_generic',
+                                                                                                          'diffusion_curvature/heatkernel.py'),
+                                                'diffusion_curvature.heatkernel.get_bound_eta_specific': ( 'neumann heat kernel via '
+                                                                                                           'chebyshev '
+                                                                                                           'approximation.html#get_bound_eta_specific',
+                                                                                                           'diffusion_curvature/heatkernel.py'),
+                                                'diffusion_curvature.heatkernel.heat_diffusion_on_signal': ( 'neumann heat kernel via '
+                                                                                                             'chebyshev '
+                                                                                                             'approximation.html#heat_diffusion_on_signal',
+                                                                                                             'diffusion_curvature/heatkernel.py'),
+                                                'diffusion_curvature.heatkernel.kronecker_delta': ( 'neumann heat kernel via chebyshev '
+                                                                                                    'approximation.html#kronecker_delta',
+                                                                                                    'diffusion_curvature/heatkernel.py'),
+                                                'diffusion_curvature.heatkernel.reverse_bound': ( 'neumann heat kernel via chebyshev '
+                                                                                                  'approximation.html#reverse_bound',
+                                                                                                  'diffusion_curvature/heatkernel.py')},
+            'diffusion_curvature.hickok': { 'diffusion_curvature.hickok.KDE': ( '3b hickok comparison.html#kde',
+                                                                                'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.KDE.__call__': ( '3b hickok comparison.html#kde.__call__',
+                                                                                         'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.KDE.__init__': ( '3b hickok comparison.html#kde.__init__',
+                                                                                         'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.KDE.bandwidth': ( '3b hickok comparison.html#kde.bandwidth',
+                                                                                          'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.KDE.biweight': ( '3b hickok comparison.html#kde.biweight',
+                                                                                         'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.KDE.density': ( '3b hickok comparison.html#kde.density',
+                                                                                        'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.KDE.epanechnikov': ( '3b hickok comparison.html#kde.epanechnikov',
+                                                                                             'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.KDE.gauss': ( '3b hickok comparison.html#kde.gauss',
+                                                                                      'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.KDE.triweight': ( '3b hickok comparison.html#kde.triweight',
+                                                                                          'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.scalar_curvature_est': ( '3b hickok '
+                                                                                                 'comparison.html#scalar_curvature_est',
+                                                                                                 'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.scalar_curvature_est.__init__': ( '3b hickok '
+                                                                                                          'comparison.html#scalar_curvature_est.__init__',
+                                                                                                          'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.scalar_curvature_est.ball_ratios': ( '3b hickok '
+                                                                                                             'comparison.html#scalar_curvature_est.ball_ratios',
+                                                                                                             'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.scalar_curvature_est.ball_volumes': ( '3b hickok '
+                                                                                                              'comparison.html#scalar_curvature_est.ball_volumes',
+                                                                                                              'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.scalar_curvature_est.compute_Rdist': ( '3b hickok '
+                                                                                                               'comparison.html#scalar_curvature_est.compute_rdist',
+                                                                                                               'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.scalar_curvature_est.compute_density': ( '3b hickok '
+                                                                                                                 'comparison.html#scalar_curvature_est.compute_density',
+                                                                                                                 'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.scalar_curvature_est.compute_nbr_matrices': ( '3b hickok '
+                                                                                                                      'comparison.html#scalar_curvature_est.compute_nbr_matrices',
+                                                                                                                      'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.scalar_curvature_est.estimate': ( '3b hickok '
+                                                                                                          'comparison.html#scalar_curvature_est.estimate',
+                                                                                                          'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.scalar_curvature_est.fit_quad_coeff': ( '3b hickok '
+                                                                                                                'comparison.html#scalar_curvature_est.fit_quad_coeff',
+                                                                                                                'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.scalar_curvature_est.get_Rdist': ( '3b hickok '
+                                                                                                           'comparison.html#scalar_curvature_est.get_rdist',
+                                                                                                           'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.scalar_curvature_est.get_density': ( '3b hickok '
+                                                                                                             'comparison.html#scalar_curvature_est.get_density',
+                                                                                                             'diffusion_curvature/hickok.py'),
+                                            'diffusion_curvature.hickok.scalar_curvature_est.nbr_distances': ( '3b hickok '
+                                                                                                               'comparison.html#scalar_curvature_est.nbr_distances',
+                                                                                                               'diffusion_curvature/hickok.py')},
+            'diffusion_curvature.hickok_battery': { 'diffusion_curvature.hickok_battery.result_table': ( '3a2 hickok curvature of '
+                                                                                                         'battery.html#result_table',
+                                                                                                         'diffusion_curvature/hickok_battery.py')},
             'diffusion_curvature.kernels': { 'diffusion_curvature.kernels.compute_anisotropic_affinities_from_graph': ( 'kernels.html#compute_anisotropic_affinities_from_graph',
                                                                                                                         'diffusion_curvature/kernels.py'),
                                              'diffusion_curvature.kernels.compute_anisotropic_diffusion_matrix_from_graph': ( 'kernels.html#compute_anisotropic_diffusion_matrix_from_graph',
@@ -65,10 +376,17 @@ d = { 'settings': { 'branch': 'main',
                                                                                                'diffusion_curvature/kernels.py'),
                                              'diffusion_curvature.kernels.gaussian_kernel': ( 'kernels.html#gaussian_kernel',
                                                                                               'diffusion_curvature/kernels.py'),
+                                             'diffusion_curvature.kernels.knn_graph': ( 'kernels.html#knn_graph',
+                                                                                        'diffusion_curvature/kernels.py'),
                                              'diffusion_curvature.kernels.median_heuristic': ( 'kernels.html#median_heuristic',
                                                                                                'diffusion_curvature/kernels.py'),
                                              'diffusion_curvature.kernels.plot_3d': ( 'kernels.html#plot_3d',
-                                                                                      'diffusion_curvature/kernels.py')},
+                                                                                      'diffusion_curvature/kernels.py'),
+                                             'diffusion_curvature.kernels.pygsp_graph_from_points': ( 'kernels.html#pygsp_graph_from_points',
+                                                                                                      'diffusion_curvature/kernels.py')},
+            'diffusion_curvature.laziness': { 'diffusion_curvature.laziness.entropy_of_diffusion': ( 'diffusion '
+                                                                                                     'laziness.html#entropy_of_diffusion',
+                                                                                                     'diffusion_curvature/laziness.py')},
             'diffusion_curvature.manifold_graph': { 'diffusion_curvature.manifold_graph.ManifoldGraph': ( 'core '
                                                                                                           '(manifoldgraph).html#manifoldgraph',
                                                                                                           'diffusion_curvature/manifold_graph.py'),
@@ -101,4 +419,123 @@ d = { 'settings': { 'branch': 'main',
                                                                                                                    'diffusion_curvature/manifold_graph.py'),
                                                     'diffusion_curvature.manifold_graph.wasserstein_spread_of_diffusion': ( 'core '
                                                                                                                             '(manifoldgraph).html#wasserstein_spread_of_diffusion',
-                                                                                                                            'diffusion_curvature/manifold_graph.py')}}}
+                                                                                                                            'diffusion_curvature/manifold_graph.py')},
+            'diffusion_curvature.normalizing_flows': { 'diffusion_curvature.normalizing_flows.FlowNet': ( 'continuous_normalizing_flows.html#flownet',
+                                                                                                          'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.FlowNet.__init__': ( 'continuous_normalizing_flows.html#flownet.__init__',
+                                                                                                                   'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.FlowNet.forward': ( 'continuous_normalizing_flows.html#flownet.forward',
+                                                                                                                  'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.GreatFlattener': ( 'continuous_normalizing_flows.html#greatflattener',
+                                                                                                                 'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.GreatFlattener.__init__': ( 'continuous_normalizing_flows.html#greatflattener.__init__',
+                                                                                                                          'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.GreatFlattener.configure_optimizers': ( 'continuous_normalizing_flows.html#greatflattener.configure_optimizers',
+                                                                                                                                      'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.GreatFlattener.forward': ( 'continuous_normalizing_flows.html#greatflattener.forward',
+                                                                                                                         'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.GreatFlattener.generate_data': ( 'continuous_normalizing_flows.html#greatflattener.generate_data',
+                                                                                                                               'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.GreatFlattener.sample': ( 'continuous_normalizing_flows.html#greatflattener.sample',
+                                                                                                                        'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.GreatFlattener.training_step': ( 'continuous_normalizing_flows.html#greatflattener.training_step',
+                                                                                                                               'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.ManifoldNeighborhoodDataset': ( 'continuous_normalizing_flows.html#manifoldneighborhooddataset',
+                                                                                                                              'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.ManifoldNeighborhoodDataset.__getitem__': ( 'continuous_normalizing_flows.html#manifoldneighborhooddataset.__getitem__',
+                                                                                                                                          'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.ManifoldNeighborhoodDataset.__init__': ( 'continuous_normalizing_flows.html#manifoldneighborhooddataset.__init__',
+                                                                                                                                       'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.ManifoldNeighborhoodDataset.__len__': ( 'continuous_normalizing_flows.html#manifoldneighborhooddataset.__len__',
+                                                                                                                                      'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.NegativeLogLikelihood': ( 'continuous_normalizing_flows.html#negativeloglikelihood',
+                                                                                                                        'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.NegativeLogLikelihood.__call__': ( 'continuous_normalizing_flows.html#negativeloglikelihood.__call__',
+                                                                                                                                 'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.NegativeLogLikelihood.__init__': ( 'continuous_normalizing_flows.html#negativeloglikelihood.__init__',
+                                                                                                                                 'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.NegativeLogLikelihoodQuaUniform': ( 'continuous_normalizing_flows.html#negativeloglikelihoodquauniform',
+                                                                                                                                  'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.NegativeLogLikelihoodQuaUniform.__call__': ( 'continuous_normalizing_flows.html#negativeloglikelihoodquauniform.__call__',
+                                                                                                                                           'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.NegativeLogLikelihoodQuaUniform.__init__': ( 'continuous_normalizing_flows.html#negativeloglikelihoodquauniform.__init__',
+                                                                                                                                           'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.dataloader_from_manifold_neighborhoods': ( 'continuous_normalizing_flows.html#dataloader_from_manifold_neighborhoods',
+                                                                                                                                         'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.neural_flattener': ( 'continuous_normalizing_flows.html#neural_flattener',
+                                                                                                                   'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.neural_flattener.__init__': ( 'continuous_normalizing_flows.html#neural_flattener.__init__',
+                                                                                                                            'diffusion_curvature/normalizing_flows.py'),
+                                                       'diffusion_curvature.normalizing_flows.neural_flattener.fit_transform': ( 'continuous_normalizing_flows.html#neural_flattener.fit_transform',
+                                                                                                                                 'diffusion_curvature/normalizing_flows.py')},
+            'diffusion_curvature.random_surfaces': { 'diffusion_curvature.random_surfaces.manifold_density': ( '2a random '
+                                                                                                               'surfaces.html#manifold_density',
+                                                                                                               'diffusion_curvature/random_surfaces.py'),
+                                                     'diffusion_curvature.random_surfaces.max_value': ( '2a random surfaces.html#max_value',
+                                                                                                        'diffusion_curvature/random_surfaces.py'),
+                                                     'diffusion_curvature.random_surfaces.random_polynomial': ( '2a random '
+                                                                                                                'surfaces.html#random_polynomial',
+                                                                                                                'diffusion_curvature/random_surfaces.py'),
+                                                     'diffusion_curvature.random_surfaces.random_surface': ( '2a random '
+                                                                                                             'surfaces.html#random_surface',
+                                                                                                             'diffusion_curvature/random_surfaces.py'),
+                                                     'diffusion_curvature.random_surfaces.rejection_sample_from_surface': ( '2a random '
+                                                                                                                            'surfaces.html#rejection_sample_from_surface',
+                                                                                                                            'diffusion_curvature/random_surfaces.py'),
+                                                     'diffusion_curvature.random_surfaces.riemannian_curvature_tensor': ( '2a random '
+                                                                                                                          'surfaces.html#riemannian_curvature_tensor',
+                                                                                                                          'diffusion_curvature/random_surfaces.py'),
+                                                     'diffusion_curvature.random_surfaces.samples_from_random_surface': ( '2a random '
+                                                                                                                          'surfaces.html#samples_from_random_surface',
+                                                                                                                          'diffusion_curvature/random_surfaces.py'),
+                                                     'diffusion_curvature.random_surfaces.scalar_curvature_at_origin': ( '2a random '
+                                                                                                                         'surfaces.html#scalar_curvature_at_origin',
+                                                                                                                         'diffusion_curvature/random_surfaces.py'),
+                                                     'diffusion_curvature.random_surfaces.second_fundamental_form': ( '2a random '
+                                                                                                                      'surfaces.html#second_fundamental_form',
+                                                                                                                      'diffusion_curvature/random_surfaces.py')},
+            'diffusion_curvature.utils': { 'diffusion_curvature.utils.kronecker_delta': ( 'utils.html#kronecker_delta',
+                                                                                          'diffusion_curvature/utils.py'),
+                                           'diffusion_curvature.utils.perform_trials': ( 'utils.html#perform_trials',
+                                                                                         'diffusion_curvature/utils.py'),
+                                           'diffusion_curvature.utils.plot_3d': ('utils.html#plot_3d', 'diffusion_curvature/utils.py'),
+                                           'diffusion_curvature.utils.plot_array': ( 'utils.html#plot_array',
+                                                                                     'diffusion_curvature/utils.py'),
+                                           'diffusion_curvature.utils.random_jnparray': ( 'utils.html#random_jnparray',
+                                                                                          'diffusion_curvature/utils.py')},
+            'diffusion_curvature.vne': { 'diffusion_curvature.vne.compute_von_neumann_entropy': ( '1e diffusion entropy for optimal '
+                                                                                                  't.html#compute_von_neumann_entropy',
+                                                                                                  'diffusion_curvature/vne.py'),
+                                         'diffusion_curvature.vne.find_knee_point': ( '1e diffusion entropy for optimal '
+                                                                                      't.html#find_knee_point',
+                                                                                      'diffusion_curvature/vne.py'),
+                                         'diffusion_curvature.vne.optimal_t_via_vne': ( '1e diffusion entropy for optimal '
+                                                                                        't.html#optimal_t_via_vne',
+                                                                                        'diffusion_curvature/vne.py')},
+            'diffusion_curvature.volume': { 'diffusion_curvature.volume.actual_euclidean_volumes_at_radii': ( 'volume '
+                                                                                                              'estimation.html#actual_euclidean_volumes_at_radii',
+                                                                                                              'diffusion_curvature/volume.py'),
+                                            'diffusion_curvature.volume.calculate_radius_offset': ( 'volume '
+                                                                                                    'estimation.html#calculate_radius_offset',
+                                                                                                    'diffusion_curvature/volume.py'),
+                                            'diffusion_curvature.volume.volume_via_heat_at_scales': ( 'volume '
+                                                                                                      'estimation.html#volume_via_heat_at_scales',
+                                                                                                      'diffusion_curvature/volume.py')},
+            'diffusion_curvature.volume_comparison': { 'diffusion_curvature.volume_comparison.extract_scalar_curvature': ( 'curvature by '
+                                                                                                                           'quadratic '
+                                                                                                                           'fitting.html#extract_scalar_curvature',
+                                                                                                                           'diffusion_curvature/volume_comparison.py'),
+                                                       'diffusion_curvature.volume_comparison.extract_scalar_curvature_with_offset_compensation': ( 'curvature '
+                                                                                                                                                    'by '
+                                                                                                                                                    'quadratic '
+                                                                                                                                                    'fitting.html#extract_scalar_curvature_with_offset_compensation',
+                                                                                                                                                    'diffusion_curvature/volume_comparison.py'),
+                                                       'diffusion_curvature.volume_comparison.scalar_curvatures_of_graph': ( 'curvature by '
+                                                                                                                             'quadratic '
+                                                                                                                             'fitting.html#scalar_curvatures_of_graph',
+                                                                                                                             'diffusion_curvature/volume_comparison.py'),
+                                                       'diffusion_curvature.volume_comparison.volume_comparisons_of_graph_at_idx': ( 'curvature '
+                                                                                                                                     'by '
+                                                                                                                                     'quadratic '
+                                                                                                                                     'fitting.html#volume_comparisons_of_graph_at_idx',
+                                                                                                                                     'diffusion_curvature/volume_comparison.py')}}}
