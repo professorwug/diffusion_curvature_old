@@ -150,14 +150,19 @@ def curvature(self:DiffusionCurvature,
     G:graphtools.graphs.DataGraph, # A graphtools graph to compute the curvature of
     t=None,  # The number of steps within the random walks. Corresponds to how local/global the curvature estimate is.
     dimension = None,  # If supplied, the intrinsic dimension of the manifold, either a list of the intrinsic dimension per point or an int of the global intrinsic dimension. If not supplied, estimates the local dimension of each point on the manifold using the estimator passed to DiffusionCurvature.
+    use_fancy_definition = False,
     ):
     """
-    Computes diffusion curvature of input graph. Stores it in G.ks
+    Computes diffusion curvature of 
+    input graph. Stores it in G.ks
     """
+    if use_fancy_definition:
+        self.use_entropy = True
     if t is None:
         t = self.t
     G = self.power_diffusion_matrix(G,t)
-    G = self.distances(G)
+    if not self.use_entropy:
+        G = self.distances(G)
     spreads_on_manifold = self.wasserstein_spread_of_diffusion(G) if not self.use_entropy else self.entropy_of_diffusion(G)
     # Create flattened version of manifold and compute stuff
     if dimension is None: # The dimension wasn't supplied; we'll estimate it pointwise
@@ -177,10 +182,13 @@ def curvature(self:DiffusionCurvature,
     for d in unique_dims:
         G_flat = self.flattened_facsimile_of_graph(G, dimension=d)
         G_flat = self.power_diffusion_matrix(G_flat,t)
-        G_flat = self.distances(G_flat)
+        if not self.use_entropy: G_flat = self.distances(G_flat)
         unique_flats[d] = self.wasserstein_spread_of_diffusion(G_flat, idx=0) if not self.use_entropy else self.entropy_of_diffusion(G, idx=0)
     divided_pts = np.array([spreads_on_manifold[idx]/unique_flats[localdim] for idx, localdim in enumerate(dims_per_point)])
     G.ks = 1 - divided_pts
+    if use_fancy_definition:
+        subtracted_points = np.array([spreads_on_manifold[idx] - unique_flats[localdim] for idx, localdim in enumerate(dims_per_point)])
+        G.ks = (6*(dims_per_point+2))/t*(1 - np.exp((1-1/(4*t))*subtracted_points))
     return G
 
 # %% ../nbs/Core (graphtools).ipynb 45
